@@ -17,12 +17,9 @@ const Footer = ({ fullWidth }) => {
            {BLOG.author} © {from === y || !from ? y : `${from} - ${y}`}
           </p>
           <p>
-            Powered by 
-            <a className="hover:text-blue-600 ml-1" href="https://github.com/craigary/nobelium" target="_blank" rel="noreferrer">Nobelium</a>, 
+            Powered by <a className="hover:text-blue-600" href="https://github.com/craigary/nobelium" target="_blank" rel="noreferrer">Nobelium</a>, 
             <a className="hover:text-blue-600" href="https://reactjs.org/" target="_blank" rel="noreferrer">React</a>, 
-            <a className="hover:text-blue-600 mr-1" href="https://nextjs.org/" target="_blank" rel="noreferrer">Next</a> 
-            and 
-            <a className="hover:text-blue-600 ml-1" href="https://tailwindcss.com/" target="_blank" rel="noreferrer">Tailwind CSS</a>.
+            <a className="hover:text-blue-600" href="https://nextjs.org/" target="_blank" rel="noreferrer">Next</a> and <a className="hover:text-blue-600" href="https://tailwindcss.com/" target="_blank" rel="noreferrer">Tailwind CSS</a>.
           </p>
         </div>
       </div>
