@@ -1,5 +1,5 @@
 import BLOG from '@/blog.config'
-import Vercel from '@/components/Vercel'
+// import Vercel from '@/components/Vercel'
 const Footer = ({ fullWidth }) => {
   const d = new Date()
   const y = d.getFullYear()
@@ -14,9 +14,16 @@ const Footer = ({ fullWidth }) => {
       <div className="my-4 text-sm leading-6 font-medium">
         <div className="flex align-baseline justify-between flex-wrap">
           <p>
-            © {BLOG.author} {from === y || !from ? y : `${from} - ${y}`}
+           {BLOG.author} © {from === y || !from ? y : `${from} - ${y}`}
           </p>
-          <Vercel />
+          <p>
+            Powered by 
+            <a className="hover:text-blue-600" href="https://github.com/craigary/nobelium" target="_blank" rel="noreferrer">Nobelium</a>, 
+            <a className="hover:text-blue-600" href="https://reactjs.org/" target="_blank" rel="noreferrer">React</a>, 
+            <a className="hover:text-blue-600" href="https://nextjs.org/" target="_blank" rel="noreferrer">Next</a> 
+            and 
+            <a className="hover:text-blue-600" href="https://tailwindcss.com/" target="_blank" rel="noreferrer">Tailwind CSS</a>.
+          </p>
         </div>
       </div>
     </div>
