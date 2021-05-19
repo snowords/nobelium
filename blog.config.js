@@ -1,8 +1,8 @@
 const BLOG = {
-  title: 'Snowwwwwwwwwwwword Blog',
+  title: 'Snoword Blog',
   author: 'Snoword',
   email: '33chijian@gmail.com',
-  link: 'https://nobelium.vercel.app',
+  link: 'https://snoword.xyz',
   description: 'This is a blog about sharing sentiment, sorting technology and output of snoword.',
   lang: 'zh-CN',
   appearance: 'auto', // ['light', 'dark', 'auto'],
@@ -16,7 +16,7 @@ const BLOG = {
   showAbout: true, // WIP
   showArchive: true, // WIP
   autoCollapsedNavBar: false, // the automatically collapsed navigation bar
-  socialLink: 'https://twitter.com/craigaryhart',
+  socialLink: 'https://twitter.com/Three__Sword',
   seo: {
     keywords: ['Blog', 'Website', 'Notion'],
     googleSiteVerification: '' // Remove the value or replace it with your own google site verification code

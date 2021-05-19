@@ -1,9 +1,3 @@
-<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
-  <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color: rgb(255, 95, 109);"></stop>
-      <stop offset="100%" style="stop-color: rgb(255, 195, 113);"></stop>
-    </linearGradient>
-  </defs>
-  <path id="blob" d="M409,317.5Q328,385,250.5,384.5Q173,384,131,317Q89,250,107,142Q125,34,235.5,59Q346,84,418,167Q490,250,409,317.5Z" fill="url(#gradient)"></path>
+<svg width="958" height="959" viewBox="0 0 958 959" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M188 0C84.1705 0 0 84.1705 0 188V771C0 874.83 84.1705 959 188 959H770C873.83 959 958 874.83 958 771V188C958 84.1705 873.83 0 770 0H188ZM442.5 118.5L478.5 89L514 118.5L499 165L506 286.5L603 304V336H509.5L528 761L527 771.5L478.5 898.5L430 771.5L429 761L447.5 336H355V304L451 286.5L458 165L442.5 118.5Z" fill="#264F78"/>
 </svg>
