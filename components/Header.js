@@ -3,7 +3,6 @@ import Link from 'next/link'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
 import Image from 'next/image'
-import Logo from '@/public/logo.svg'
 
 const NavBar = () => {
   const locale = useLocale()
@@ -70,7 +69,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
               alt={'LogoPic'}
               width={24}
               height={24}
-              src={Logo}
+              src={'https://s.gravatar.com/avatar/dc266f34971f7719d3fe745f3a376be8?s=80'}
             />
           </a> 
           {navBarTitle ? (
