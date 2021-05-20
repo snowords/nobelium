@@ -22,6 +22,7 @@ const BLOG = {
     googleSiteVerification: 'beUFeNNyZVeRqPbjnjIDdt6d6EFxtwYhAcynXXLE9u0' // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
+  // notionPageId: '0102aa04979740b5a2df0bd2aa272af5', // DO NOT CHANGE THIS！！！
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
   analytics: {
     provider: 'ga', // Currently we support Google Analytics and Ackee, please fill with 'ga' or 'ackee', leave it empty to disable it.
@@ -36,13 +37,13 @@ const BLOG = {
   },
   comment: {
     // support provider: gitalk, utterances, cusdis
-    provider: 'cusdis', // leave it empty if you don't need any comment plugin
+    provider: 'gitalk', // leave it empty if you don't need any comment plugin
     gitalkConfig: {
-      repo: '', // The repository of store comments
-      owner: '',
-      admin: [],
-      clientID: '',
-      clientSecret: '',
+      repo: 'Resume', // The repository of store comments
+      owner: 'snowords',
+      admin: ['snowords'],
+      clientID: 'e608fba0dff44a15ed1a',
+      clientSecret: '4a7021f0867c0fef3608463089918387b2001d51',
       distractionFreeMode: false
     },
     utterancesConfig: {
