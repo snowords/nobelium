@@ -3,6 +3,7 @@ import Link from 'next/link'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
 import Image from 'next/image'
+import Logo from '@/public/logo-w.png'
 
 const NavBar = () => {
   const locale = useLocale()
@@ -66,10 +67,10 @@ const Header = ({ navBarTitle, fullWidth }) => {
         <div className="flex items-center">
           <a href="/">
             <Image
-              alt={'Logo'}
+              alt={'LogoPic'}
               width={24}
               height={24}
-              src={'../public/logo-w.png'}
+              src={Logo}
             />
           </a> 
           {navBarTitle ? (
