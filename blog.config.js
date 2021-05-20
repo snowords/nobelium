@@ -15,7 +15,7 @@ const BLOG = {
   sortByDate: true,
   showAbout: true, // WIP
   showArchive: true, // WIP
-  autoCollapsedNavBar: true, // the automatically collapsed navigation bar
+  autoCollapsedNavBar: false, // the automatically collapsed navigation bar
   socialLink: 'https://twitter.com/snoword1024',
   seo: {
     keywords: ['Blog', 'Website', 'Notion'],
