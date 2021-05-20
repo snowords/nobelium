@@ -64,16 +64,14 @@ const Header = ({ navBarTitle, fullWidth }) => {
         ref={navRef}
       >
         <div className="flex items-center">
-          <Link href="/">
-            <a>
-              <Image
-                alt={'Logo'}
-                width={24}
-                height={24}
-                src={'../public/logo-w.png'}
-              />
-            </a> 
-          </Link>
+          <a href="/">
+            <Image
+              alt={'Logo'}
+              width={24}
+              height={24}
+              src={'../public/logo-w.png'}
+            />
+          </a> 
           {navBarTitle ? (
             <p className="ml-2 font-medium text-day dark:text-night header-name">
               {navBarTitle}
