@@ -3,7 +3,7 @@ import Link from 'next/link'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
 import Image from 'next/image'
-import Logo from '@/public/logow.png'
+import Logo from '@/public/logo.svg'
 
 const NavBar = () => {
   const locale = useLocale()
