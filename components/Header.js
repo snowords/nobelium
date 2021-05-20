@@ -70,7 +70,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
                 alt={'Logo'}
                 width={24}
                 height={24}
-                src={`https://s.gravatar.com/avatar/dc266f34971f7719d3fe745f3a376be8?s=80`}
+                src={'../public/logo-w.png'}
               />
             </a> 
           </Link>
