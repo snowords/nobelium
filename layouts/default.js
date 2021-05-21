@@ -44,7 +44,7 @@ const DefaultLayout = ({ children, blockMap, frontMatter, emailHash }) => {
       // date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
     >
-      <article>
+      <article className="bg-white p-10 shadow-sm">
         <h1 className="font-bold text-3xl text-black dark:text-white">
           {frontMatter.title}
         </h1>
