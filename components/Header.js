@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
 
@@ -64,11 +65,11 @@ const Header = ({ navBarTitle, fullWidth }) => {
       >
         <div className="flex items-center">
           <a href="/">
-            <img
-              alt={'LogoPic'}
+            <Image
+              alt="LogoPic"
               width={24}
               height={24}
-              src={'https://s.gravatar.com/avatar/dc266f34971f7719d3fe745f3a376be8?s=80'}
+              src="/img/logo.png"
             />
           </a> 
           {navBarTitle ? (
