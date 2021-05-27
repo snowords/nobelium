@@ -4,12 +4,12 @@ import Pagination from '@/components/Pagination'
 import { getAllPosts } from '@/lib/notion'
 import BLOG from '@/blog.config'
 
-const Page = ({ postsToShow, page, showNext }) => {
+const Page = ({ postsToShow, page, showNext, nowPage }) => {
   return (
     <Container>
       {postsToShow &&
         postsToShow.map(post => <BlogPost key={post.id} post={post} />)}
-      <Pagination page={page} showNext={showNext} />
+      <Pagination page={page} showNext={showNext} nowPage={nowPage}/>
     </Container>
   )
 }
@@ -26,11 +26,14 @@ export async function getStaticProps(context) {
   )
   const totalPosts = posts.length
   const showNext = page * BLOG.postsPerPage < totalPosts
+  const totalPages = Math.ceil(totalPosts / BLOG.postsPerPage)
+  const nowPage = "第"+ page +"页 / 共" + totalPages + "页"
   return {
     props: {
       page, // Current Page
       postsToShow,
-      showNext
+      showNext,
+      nowPage
     },
     revalidate: 1
   }

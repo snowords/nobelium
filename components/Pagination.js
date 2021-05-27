@@ -2,7 +2,7 @@ import Link from 'next/link'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
 
-const Pagination = ({ page, showNext }) => {
+const Pagination = ({ page, showNext, nowPage }) => {
   const locale = useLocale()
   const currentPage = +page
   return (
@@ -18,15 +18,16 @@ const Pagination = ({ page, showNext }) => {
           rel="prev"
           className={`${
             currentPage === 1 ? 'invisible' : 'block'
-          } cursor-pointer`}
+          } cursor-pointer p-2 rounded-xl hover:bg-white hover:shadow transition-all duration-500 `}
         >
           ← {locale.PAGINATION.PREV}
         </button>
       </Link>
+      <p className="font-normal text-gray-500">{nowPage}</p>
       <Link href={`/page/${currentPage + 1}`}>
         <button
           rel="next"
-          className={`${+showNext ? 'block' : 'invisible'} cursor-pointer`}
+          className={`${+showNext ? 'block' : 'invisible'} cursor-pointer p-2 rounded-xl hover:bg-white hover:shadow transition-all duration-500 `}
         >
           {locale.PAGINATION.NEXT} →
         </button>
