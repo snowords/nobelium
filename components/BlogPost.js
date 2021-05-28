@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import BLOG from '@/blog.config'
+import Image from 'next/image'
 import formatDate from '@/lib/formatDate'
 
 const BlogPost = ({ post }) => {
   return (
-    <article key={post.id} className="mb-3 md:mb-4 p-8 transition-all rounded-md shadow-sm bg-white dark:bg-gray-700 dark:text-white hover:shadow-md ">
+    <article key={post.id} className="mb-3 md:mb-4 p-8 transition-all rounded-md shadow-sm relative bg-white dark:bg-gray-700 dark:text-white hover:shadow-md">
       <header className="flex flex-col justify-between md:flex-row md:items-baseline">
         <Link href={`${BLOG.path}/${post.slug}`}>
           <a>
@@ -22,6 +23,18 @@ const BlogPost = ({ post }) => {
           {post.summary}
         </p>
       </main>
+      {post.isTop ? (
+      // <p className="absolute -top-0.5 -right-0.5 p-1 border-t-4 border-r-4 border-red-500">置顶</p>
+        <div className="absolute -left-19 top-1">
+          <Image
+            alt="flower"
+            width={96}
+            height={96}
+            src="/img/flower.png"
+          />
+        </div>
+      ) : ''}
+      
     </article>
   )
 }
