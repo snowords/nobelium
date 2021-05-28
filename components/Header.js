@@ -10,23 +10,22 @@ const NavBar = () => {
     { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
     { id: 1, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
     { id: 2, name: locale.NAV.RSS, to: '/feed', show: true },
-    { id: 3, name: locale.NAV.SEARCH, to: '/search', show: true }
+    { id: 3, name: locale.NAV.SEARCH, to: '/search', show: true },
+    { id: 4, name: locale.NAV.TOOLS, to: '/tools', show: true }
   ]
   return (
     <div className="flex-shrink-0">
       <ul className="flex flex-row">
-        {links.map(
-          link =>
-            link.show && (
-              <li
-                key={link.id}
-                className="block ml-4 text-black dark:text-gray-50 nav"
-              >
-                <Link href={link.to}>
-                  <a target="_blank">{link.name}</a>
-                </Link>
-              </li>
-            )
+        {links.map(link => link.show && (
+          <li
+            key={link.id}
+            className="block ml-4 text-black dark:text-gray-50 nav"
+          >
+            <Link href={link.to}>
+              <a target="_blank">{link.name}</a>
+            </Link>
+          </li>
+        )
         )}
       </ul>
     </div>
