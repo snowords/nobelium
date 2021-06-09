@@ -26,7 +26,7 @@ const Tools = ({ toolsList }) => {
         {toolsList.map(tool => (
           <Link href={tool.to}>
             <a>
-              <div className="p-4 bg-white rounded-xl shadow-sm flex items-center space-x-4 hover:shadow dark:bg-gray-700 dark:text-white">
+              <div className="p-4 rounded-xl shadow-sm flex items-center space-x-4 hover:shadow bg-white dark:bg-gray-700 dark:text-white">
                 <div class="flex-shrink-0">
                   <Image
                     alt={tool.name}
