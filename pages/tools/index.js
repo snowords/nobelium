@@ -6,7 +6,7 @@ import Link from 'next/link'
 export async function getStaticProps() {
   const toolsList = [
     {name: "QRCode", summary: "在线二维码生成", to:"/tools/QRCode", iconUrl: "/img/QRCode.png"},
-    {name: "MarkDown", summary: "MD格式文档预览", to:"/tools/QRCode", iconUrl: "/img/MarkDown.png"},
+    {name: "MarkDown", summary: "MD格式文档预览", to:"/tools/Markdown", iconUrl: "/img/MarkDown.png"},
     {name: "MD5加密", summary: "在线MD5加密", to:"/tools/QRCode", iconUrl: "/img/MD5.png"},
     {name: "QRCode", summary: "在线二维码生成", to:"/tools/QRCode", iconUrl: "/img/QRCode.png"},
     {name: "MarkDown", summary: "MD格式文档预览", to:"/tools/QRCode", iconUrl: "/img/MarkDown.png"},
@@ -36,8 +36,8 @@ const Tools = ({ toolsList }) => {
                   />
                 </div>
                 <div>
-                  <div class="text font-medium text-black">{tool.name}</div>
-                  <p class="text-sm text-gray-500">{tool.summary}</p>
+                  <div class="text font-medium text-black dark:text-white">{tool.name}</div>
+                  <p class="text-sm text-gray-500 dark:text-gray-200">{tool.summary}</p>
                 </div>
               </div>
             </a>
