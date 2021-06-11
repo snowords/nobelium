@@ -1,9 +1,13 @@
 import Container from '@/components/Container'
 import BLOG from '@/blog.config'
-import ReactMarkdown from 'react-markdown'
 import { useState } from 'react'
-import gfm from 'remark-gfm'
-import { DatePicker } from 'antd';
+import remarkGfm from 'remark-gfm'
+import remarkSlug from 'remark-slug'
+import remarkToc from 'remark-toc'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeRaw from 'rehype-raw'
+import ReactMarkdown from 'react-markdown'
+import { DatePicker, Input } from 'antd';
 
 const MarkDown = () => {
   const [text, setText] = useState(
@@ -26,18 +30,32 @@ const MarkDown = () => {
     setText(value)
   }
 
+  const textChange = e => setTextValue(e.target.value)
+
+  const { TextArea } = Input
+
   return (
     <div>
-      <div className="h-4 rounded-md"><DatePicker /></div>
-      <div className="grid h-screen p-2 grid-cols-2 grid-rows-8 gap-2">
+      <div className="grid h-16 p-2 m-2 rounded-md bg-white bg-opacity-80"><DatePicker /></div>
+      <div className="grid h-screen p-2 grid-cols-1 md:grid-cols-2 gap-2">
         <div className="p-4 rounded-md bg-gray-800 bg-opacity-80">
-          <textarea className=""
-            onChange={e => setTextValue(e.target.value)}>
-            {text}
-          </textarea>
+          <TextArea
+            className="bg-transparent text-white"
+            value={text}
+            onChange={textChange}
+            placeholder="请输入Markdown文档"
+            autoSize={{ minRows: 3 }}
+            bordered={false}
+          />
         </div>
-        <div className="p-4 rounded-md bg-white bg-opacity-80">
-          <ReactMarkdown remarkPlugins={[gfm]} children={text} />
+        <div className="p-4 rounded-md bg-white bg-opacity-80 text-lg">
+          <ReactMarkdown 
+            className=""
+            remarkPlugins={[remarkGfm, remarkToc, remarkSlug]} 
+            rehypePlugins={[rehypeHighlight, rehypeRaw]}
+            >
+            {text}
+          </ReactMarkdown>
         </div>
       </div>
     </div>
