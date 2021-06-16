@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "antd": "^4.16.2",
+    "crypto-js": "^4.0.0",
     "feed": "^4.2.2",
     "file-loader": "^6.2.0",
     "gitalk": "^1.7.2",
