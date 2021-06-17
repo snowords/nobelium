@@ -5,7 +5,7 @@ import { Upload, Input, Button, message  } from 'antd';
 import { DownloadOutlined, InboxOutlined  } from '@ant-design/icons';
 import enBase64 from 'crypto-js/enc-base64';
 
-function BASE64() {
+function Base64() {
   const [text, setText] = useState("")
   const [encodeText, setEncodeText] = useState("")
   const [encodedText, setEncodedText] = useState("")
@@ -56,4 +56,4 @@ function BASE64() {
   )
 }
 
-export default BASE64
+export default Base64
