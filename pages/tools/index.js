@@ -9,7 +9,7 @@ export async function getStaticProps() {
     {id: 2, name: "MarkDown", summary: "MD格式文档预览", to:"/tools/Markdown", iconUrl: "/img/MarkDown.png"},
     {id: 3, name: "Base64转换", summary: "BASE64加密解密", to:"/tools/Base64", iconUrl: "/img/trans.png"},
     {id: 4, name: "MD5加密", summary: "摘要算法 不可逆", to:"/tools/MD5", iconUrl: "/img/MD5.png"},
-    {id: 5, name: "Time", summary: "时间格式处理", to:"/tools/TimeTool", iconUrl: "/img/time.png"},
+    {id: 5, name: "Time工具", summary: "时间格式处理", to:"/tools/TimeTool", iconUrl: "/img/time.png"},
   ]
   return {
     props: {

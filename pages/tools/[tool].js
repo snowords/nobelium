@@ -1,17 +1,29 @@
 import { useRouter } from 'next/router'
 import Container from '@/components/Container'
-import TimeTool from '@/components/tools/TimeTool'
 import BLOG from '@/blog.config'
+
+import TimeTool from '@/components/tools/TimeTool'
+import Base64 from '@/components/tools/Base64'
+import MarkDown from '@/components/tools/MarkDown'
+import MD5 from '@/components/tools/MD5'
+import QRCode from '@/components/tools/QRCode'
 
 const Tool = () => {
   const router = useRouter()
   const { tool } = router.query
 
-  const toolComBox =  ''; 
+  const toolsList = new Map([
+    [ "TimeTool", <TimeTool />],
+    [ "Base64", <Base64 />],
+    [ "MarkDown", <MarkDown />],
+    [ "MD5", <MD5 />],
+    [ "QRCode", <QRCode />],
+  ])
+
+  const ToolComBox =  toolsList.get(tool); 
   return (
     <Container title={BLOG.title} description={BLOG.description}>
-      <p>工具名: {tool}</p>
-      <TimeTool />
+      {ToolComBox}
     </Container>
   )
 }

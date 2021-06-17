@@ -1,5 +1,3 @@
-import Container from '@/components/Container'
-import BLOG from '@/blog.config'
 import { useState } from 'react'
 import remarkGfm from 'remark-gfm'
 import remarkSlug from 'remark-slug'
@@ -28,9 +26,7 @@ const MarkDown = () => {
   const { TextArea } = Input
 
   return (
-
-    <Container title={BLOG.title} description={BLOG.description}>
-
+    <div>
       <div className="text-lg bold text-center">MarkDown文档在线预览工具</div>
       <div className="grid p-2 grid-cols-1 md:grid-cols-2 gap-2">
         <div className="p-4 rounded-md bg-gray-800 bg-opacity-80">
@@ -53,8 +49,7 @@ const MarkDown = () => {
           </ReactMarkdown>
         </div>
       </div>
-      
-    </Container>
+    </div>
   )
 }
 
