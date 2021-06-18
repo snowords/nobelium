@@ -7,7 +7,7 @@ import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
 import { DatePicker, Input } from 'antd';
 
-const MarkDown = () => {
+const Markdown = () => {
   const [text, setText] = useState(
   `# A demo of \`react-markdown\`
   \`react-markdown\` is a markdown component for React.
@@ -53,4 +53,4 @@ const MarkDown = () => {
   )
 }
 
-export default MarkDown
+export default Markdown

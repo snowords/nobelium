@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import Image from 'next/image'
 import { Form, Input, DatePicker, Space} from 'antd';
 
 class TimeTool extends React.Component {
@@ -65,7 +66,7 @@ class TimeTool extends React.Component {
             <span className="text-gray-500 text-sm">北京时间</span>
             <p className="text-lg">{this.state.date}</p>
           </div>
-          <div className="p-6 rounded-md bg-white bg-opacity-80 text-md text-center">
+          <div className="p-6 w-4/5 rounded-md bg-white bg-opacity-80 text-md text-center place-self-end">
             <span className="text-gray-500 text-sm">时间戳</span>
             <p className="text-lg">{this.state.timestamp}</p>
           </div>
@@ -73,22 +74,48 @@ class TimeTool extends React.Component {
             <Form.Item label="时间戳">
               <Input 
                 value={this.state.inputText}
+                placeholder="请输入时间戳"
                 onChange={this.textChange}
                 />
             </Form.Item>
           </div>
-          <div className="p-4 rounded-md bg-gray-800 bg-opacity-80 text-white">
-            {this.state.inputTimeStamp}
+          <div className="grid grid-cols-1 md:grid-cols-5">
+            <div className="self-center place-self-center">
+              <Image
+                alt="箭头"
+                width={24}
+                height={18}
+                src="/img/arrow.png"
+              />
+            </div>
+            <div className="col-span-4 rounded-md bg-gray-800 bg-opacity-80 text-white">
+              {this.state.inputTimeStamp}
+            </div>
           </div>
           <div className="px-2 py-4 rounded-md bg-white bg-opacity-80 text-md text-center">
             <Form.Item label="选择时间">
               <Space direction="vertical">
-                <DatePicker showTime onChange={this.onChange} onOk={this.onOk} />
+                <DatePicker 
+                  showTime 
+                  onChange={this.onChange} 
+                  onOk={this.onOk} 
+                  placeholder="请选择日期"
+                  />
               </Space>
             </Form.Item>
           </div>
-          <div className="p-4 rounded-md bg-gray-800 bg-opacity-80 text-white">
-            {this.state.inputDateTime}
+          <div className="grid grid-cols-1 md:grid-cols-5">
+            <div className="self-center place-self-center">
+              <Image
+                  alt="箭头"
+                  width={24}
+                  height={18}
+                  src="/img/arrow.png"
+                />
+            </div>
+            <div className="col-span-4 rounded-md bg-gray-800 bg-opacity-80 text-white">
+              {this.state.inputDateTime}
+            </div>
           </div>
         </div>
       </>

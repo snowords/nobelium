@@ -4,7 +4,7 @@ import BLOG from '@/blog.config'
 
 import TimeTool from '@/components/tools/TimeTool'
 import Base64 from '@/components/tools/Base64'
-import MarkDown from '@/components/tools/MarkDown'
+import Markdown from '@/components/tools/Markdown'
 import MD5 from '@/components/tools/MD5'
 import QRCode from '@/components/tools/QRCode'
 
@@ -15,7 +15,7 @@ const Tool = () => {
   const toolsList = new Map([
     [ "TimeTool", <TimeTool />],
     [ "Base64", <Base64 />],
-    [ "MarkDown", <MarkDown />],
+    [ "Markdown", <Markdown />],
     [ "MD5", <MD5 />],
     [ "QRCode", <QRCode />],
   ])
