@@ -29,6 +29,7 @@
     "preact": "^10.5.13",
     "qrcode.react": "^1.0.1",
     "react": "17.0.2",
+    "react-colorful": "^5.2.2",
     "react-cusdis": "^2.0.1",
     "react-dom": "17.0.2",
     "react-markdown": "^6.0.2",

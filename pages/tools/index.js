@@ -1,5 +1,4 @@
 import Container from '@/components/Container'
-import BLOG from '@/blog.config'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -10,6 +9,7 @@ export async function getStaticProps() {
     {id: 3, name: "Base64转换", summary: "BASE64加密解密", to:"/tools/Base64", iconUrl: "/img/trans.png"},
     {id: 4, name: "MD5加密", summary: "摘要算法 不可逆", to:"/tools/MD5", iconUrl: "/img/MD5.png"},
     {id: 5, name: "Time工具", summary: "时间格式处理", to:"/tools/TimeTool", iconUrl: "/img/time.png"},
+    {id: 6, name: "Color工具", summary: "时间格式处理", to:"/tools/Color", iconUrl: "/img/color.png"},
   ]
   return {
     props: {
@@ -19,7 +19,7 @@ export async function getStaticProps() {
 }
 const Tools = ({ toolsList }) => {
   return (
-    <Container title={BLOG.title} description={BLOG.description}>
+    <Container className="bg-gray-600" title='在线工具' description='在线工具集合，不定期更新'>
       <p className="mb-4 text-xl text-gray-500">在线小工具</p>
       <div className="grid grid-cols-3 gap-4">
         {toolsList.map(tool => (

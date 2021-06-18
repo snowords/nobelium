@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router'
 import Container from '@/components/Container'
-import BLOG from '@/blog.config'
 
 import TimeTool from '@/components/tools/TimeTool'
 import Base64 from '@/components/tools/Base64'
 import Markdown from '@/components/tools/Markdown'
 import MD5 from '@/components/tools/MD5'
 import QRCode from '@/components/tools/QRCode'
+// import Color from '@/components/tools/Color'
 
 const Tool = () => {
   const router = useRouter()
@@ -18,11 +18,12 @@ const Tool = () => {
     [ "Markdown", <Markdown />],
     [ "MD5", <MD5 />],
     [ "QRCode", <QRCode />],
+    // [ "Color", <Color />],
   ])
 
   const ToolComBox =  toolsList.get(tool); 
   return (
-    <Container title={BLOG.title} description={BLOG.description}>
+    <Container title={tool} description='在线小工具，尽情享用哦~'>
       {ToolComBox}
     </Container>
   )
