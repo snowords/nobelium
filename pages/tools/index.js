@@ -9,7 +9,8 @@ export async function getStaticProps() {
     {id: 3, name: "Base64转换", summary: "BASE64加密解密", to:"/tools/Base64", iconUrl: "/img/trans.png"},
     {id: 4, name: "MD5加密", summary: "摘要算法 不可逆", to:"/tools/MD5", iconUrl: "/img/MD5.png"},
     {id: 5, name: "Time工具", summary: "时间格式处理", to:"/tools/TimeTool", iconUrl: "/img/time.png"},
-    {id: 6, name: "Color工具", summary: "时间格式处理", to:"/tools/Color", iconUrl: "/img/color.png"},
+    {id: 6, name: "Color工具", summary: "颜色工具", to:"/tools/Color", iconUrl: "/img/color.png"},
+    {id: 6, name: "Regex工具", summary: "正则表达式", to:"/tools/RegexTool", iconUrl: "/img/regex.png"},
   ]
   return {
     props: {

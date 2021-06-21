@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Upload, Input, Button, message  } from 'antd';
+import { Input } from 'antd';
 // import sha256 from 'crypto-js/sha256'
 
 function MD5() {

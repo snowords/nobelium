@@ -6,7 +6,7 @@ import Base64 from '@/components/tools/Base64'
 import Markdown from '@/components/tools/Markdown'
 import MD5 from '@/components/tools/MD5'
 import QRCode from '@/components/tools/QRCode'
-// import Color from '@/components/tools/Color'
+import RegexTool from '@/components/tools/RegexTool'
 
 const Tool = () => {
   const router = useRouter()
@@ -18,7 +18,7 @@ const Tool = () => {
     [ "Markdown", <Markdown />],
     [ "MD5", <MD5 />],
     [ "QRCode", <QRCode />],
-    // [ "Color", <Color />],
+    [ "RegexTool", <RegexTool />],
   ])
 
   const ToolComBox =  toolsList.get(tool); 
