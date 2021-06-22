@@ -2,6 +2,8 @@ import { RgbaColorPicker } from 'react-colorful'
 import { useState } from 'react';
 import { Form, Input, Button } from 'antd';
 import Container from '@/components/Container'
+import _ from 'lodash'
+import { transitionDelay } from 'tailwindcss/defaulttheme';
 
 function Color() {
   const [color, setColor] = useState({ r: 200, g: 150, b: 35, a: 0.5 })
@@ -35,13 +37,6 @@ function Color() {
     setColor(colorObj)
     setHexColor(hexStr)
   } 
-  // 更新多个键对象的状态
-  // const changeRgbaColor = (e) => {
-  //   setsetColor({
-  //     ...color,
-  //     [e.target.name]: e.target.value
-  //   })
-  // } 
 
   const changeHexColor = (e) => {
     const value = e.target.value
@@ -57,12 +52,17 @@ function Color() {
   } 
 
   const colorStyle = {
-    backgroundColor: hexColor
+    backgroundColor: hexColor,
   }
-  
+
   const randomColor = () => {
-    const randomHexStr = "#ab1245"
-    setHexColor(randomHexStr)
+    const colorObj = {
+      r: _.random(0, 255),
+      g: _.random(0, 255),
+      b: _.random(0, 255),
+      a: 0.5
+    }
+    changeColor(colorObj)
   }
 
   return (
@@ -83,35 +83,25 @@ function Color() {
           </Form.Item>
         </div>
         <div className="p-4 md:w-2/5 rounded-md bg-white bg-opacity-80 text-md place-self-center shadow-lg">
-          <div>RGBA值</div>
-          <Form.Item label="R">
-            <Input 
-              value={color.r}
-              />
-          </Form.Item>
-          <Form.Item label="G">
-            <Input 
-              value={color.g}
-              />
-          </Form.Item>
-          <Form.Item label="B">
-            <Input 
-              value={color.b}
-              />
-          </Form.Item>
-          <Form.Item label="A">
-            <Input 
-              value={color.a}
-              />
-          </Form.Item>
+          <Input addonBefore="R" className="w-1/2 p-1" 
+            value={color.r}
+            />
+          <Input addonBefore="G" className="w-1/2 p-1"
+            value={color.g}
+            />
+          <Input addonBefore="B" className="w-1/2 p-1"
+            value={color.b}
+            />
+          <Input addonBefore="A" className="w-1/2 p-1"
+            value={color.a}
+            />
+        </div>
+        <div className="place-self-center">
+          <Button className="rounded p-1 m-1" type="primary" onClick={randomColor}>
+            随机颜色
+          </Button>
         </div>
       </div>
-      <Button type="primary" onClick={randomColor}>
-        开启随机颜色
-      </Button>
-      <Button type="primary" onClick={randomColor}>
-        关闭随机颜色
-      </Button>
     </Container>
   )
 }

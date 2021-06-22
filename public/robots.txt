@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://snoword.xyz
+
+# Sitemaps
+Sitemap: https://snoword.xyz/sitemap.xml

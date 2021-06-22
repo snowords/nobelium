@@ -14,7 +14,7 @@ function QRCode() {
     const pngUrl = canvas
       .toDataURL("image/png")
       .replace("image/png", "image/octet-stream")
-    let downloadLink = document.createElement("a")
+    const downloadLink = document.createElement("a")
     downloadLink.href = pngUrl
     downloadLink.download = "二维码.png"
     document.body.appendChild(downloadLink)

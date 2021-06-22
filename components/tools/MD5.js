@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Input } from 'antd';
-// import sha256 from 'crypto-js/sha256'
+import sha256 from 'crypto-js/sha256'
 
 function MD5() {
   const [text, setText] = useState("")

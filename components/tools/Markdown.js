@@ -5,7 +5,7 @@ import remarkToc from 'remark-toc'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
-import { DatePicker, Input } from 'antd';
+import { Input } from 'antd'
 
 const Markdown = () => {
   const [text, setText] = useState(

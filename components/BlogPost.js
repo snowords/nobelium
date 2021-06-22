@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import BLOG from '@/blog.config'
-import Image from 'next/image'
 import formatDate from '@/lib/formatDate'
 
 const BlogPost = ({ post }) => {
@@ -24,18 +23,10 @@ const BlogPost = ({ post }) => {
         </p>
       </main>
       {post.isTop ? (
-      <div>
-        <p className="absolute -top-0.5 -right-0.5 p-1 border-t-4 border-r-4 border-red-400 text-sm"> </p>
-        <p className="absolute -top-0.5 -left-0.5 p-1 border-t-4 border-l-4 border-red-400"> </p>
-      </div>
-        // <div className="absolute -left-19 top-1">
-        //   <Image
-        //     alt="flower"
-        //     width={96}
-        //     height={96}
-        //     src="/img/flower.png"
-        //   />
-        // </div>
+        <div>
+          <p className="absolute -top-0.5 -right-0.5 p-1 border-t-4 border-r-4 border-red-400 text-sm"> </p>
+          <p className="absolute -top-0.5 -left-0.5 p-1 border-t-4 border-l-4 border-red-400"> </p>
+        </div>
       ) : ''}
       
     </article>

@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { Upload, Input, Button, message  } from 'antd';
-import { DownloadOutlined, InboxOutlined  } from '@ant-design/icons';
-// import enBase64 from 'crypto-js/enc-base64';
+import { Input} from 'antd';
+import enBase64 from 'crypto-js/enc-base64';
 
 function Base64() {
   const [text, setText] = useState("")
@@ -12,7 +11,7 @@ function Base64() {
     setText(e.target.value)
     if(e.target.value){
       setEncodeText(window.btoa(e.target.value))
-      // setEncodedText(enBase64(e.target.value))
+      setEncodedText(enBase64(e.target.value))
     }
   }
   const enCodeTextChange = e => {

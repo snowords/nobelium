@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import moment from 'moment'
 import Image from 'next/image'
 import { Form, Input, DatePicker, Space} from 'antd';
@@ -19,6 +19,9 @@ class TimeTool extends React.Component {
       inputTimeStamp: '',
       inputDateTime: ''
     };
+    this.textChange = this.textChange.bind(this)
+    this.onChange = this.onChange.bind(this)
+    this.onOk = this.onOk.bind(this)
   }
 
   componentDidMount() {
@@ -39,20 +42,20 @@ class TimeTool extends React.Component {
     });
   }
 
-  textChange = (e) => {
+  textChange(e) {
     const value = e.target.value
     this.setState({ inputText: value})
     const sizeNum = Math.pow(10, 13 - value.length)
     this.setState({ inputTimeStamp: moment(Number(value) * sizeNum).format()})
   }
 
-  onChange = (value, dateString) => {
+  onChange(value, dateString) {
     console.log('Selected Time: ', value);
     console.log('Formatted Selected Time: ', dateString);
     this.setState({ inputDateTime: moment(value).unix()})
   }
   
-  onOk = (value) => {
+  onOk(value) {
     console.log('onOk: ', value);
     this.setState({ inputDateTime: moment(value).unix()})
   }
@@ -88,7 +91,7 @@ class TimeTool extends React.Component {
                 src="/img/arrow.png"
               />
             </div>
-            <div className="col-span-4 rounded-md bg-gray-800 bg-opacity-80 text-white">
+            <div className="col-span-4 rounded-md bg-gray-800 bg-opacity-80 text-white p-4">
               {this.state.inputTimeStamp}
             </div>
           </div>
@@ -113,7 +116,7 @@ class TimeTool extends React.Component {
                   src="/img/arrow.png"
                 />
             </div>
-            <div className="col-span-4 rounded-md bg-gray-800 bg-opacity-80 text-white">
+            <div className="col-span-4 rounded-md bg-gray-800 bg-opacity-80 text-white p-4 ">
               {this.state.inputDateTime}
             </div>
           </div>
