@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Form, Input, Button } from 'antd';
 import Container from '@/components/Container'
 import _ from 'lodash'
-import { transitionDelay } from 'tailwindcss/defaulttheme';
 
 function Color() {
   const [color, setColor] = useState({ r: 200, g: 150, b: 35, a: 0.5 })
