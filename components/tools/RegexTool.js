@@ -1,17 +1,15 @@
 import { useState } from 'react'
-import { Input, Checkbox, Button } from 'antd';
+import { Input, Checkbox, Button } from 'antd'
 
-function RegexTool() {
+function RegexTool () {
   const { TextArea } = Input
+  const [text, setText] = useState('')
+  const [regexText, setRegexText] = useState('')
+  const [modelText, setModelText] = useState('')
+  const [replaceText, setReplaceText] = useState('')
+  const [matchResult, setMatchResult] = useState('暂无匹配结果')
+  const [repResult, setRepResult] = useState('暂无替换结果')
 
-  const [text, setText] = useState("")
-  const [regexText, setRegexText] = useState("")
-  const [modelText, setModelText] = useState("")
-  const [replaceText, setReplaceText] = useState("")
-  const [matchResult, setMatchResult] = useState("暂无匹配结果")
-  const [repResult, setRepResult] = useState("暂无替换结果")
-
-  
   const textChange = e => {
     const value = e?.target?.value || e
     setText(value)
@@ -57,7 +55,7 @@ function RegexTool() {
       </div>
       <div className="p-4 rounded-md bg-white bg-opacity-80">
         <Input.Group>
-          <Input 
+          <Input
             className="w-1/2 mr-4"
             addonBefore="正则表达式"
             value={regexText}
@@ -76,7 +74,7 @@ function RegexTool() {
       </div>
 
       <div className="p-4 rounded-md bg-white bg-opacity-80">
-        <Input 
+        <Input
           className="w-1/2"
           addonBefore="替换文本"
           value={replaceText}

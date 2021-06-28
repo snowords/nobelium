@@ -2,15 +2,15 @@ import Container from '@/components/Container'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   const toolsList = [
-    {id: 1, name: "QRCode", summary: "在线二维码生成", to:"/tools/QRCode", iconUrl: "/img/QRCode.png"},
-    {id: 2, name: "MarkDown", summary: "MD格式文档预览", to:"/tools/Markdown", iconUrl: "/img/MarkDown.png"},
-    {id: 3, name: "Base64转换", summary: "BASE64加密解密", to:"/tools/Base64", iconUrl: "/img/trans.png"},
-    {id: 4, name: "MD5加密", summary: "摘要算法 不可逆", to:"/tools/MD5", iconUrl: "/img/MD5.png"},
-    {id: 5, name: "Time工具", summary: "时间格式处理", to:"/tools/TimeTool", iconUrl: "/img/time.png"},
-    {id: 6, name: "Color工具", summary: "颜色工具", to:"/tools/Color", iconUrl: "/img/color.png"},
-    {id: 7, name: "Regex工具", summary: "正则表达式", to:"/tools/RegexTool", iconUrl: "/img/regex.png"},
+    { id: 1, name: 'QRCode', summary: '在线二维码生成', to: '/tools/QRCode', iconUrl: '/img/QRCode.png' },
+    { id: 2, name: 'MarkDown', summary: 'MD格式文档预览', to: '/tools/Markdown', iconUrl: '/img/MarkDown.png' },
+    { id: 3, name: 'Base64转换', summary: 'BASE64加密解密', to: '/tools/Base64', iconUrl: '/img/trans.png' },
+    { id: 4, name: 'MD5加密', summary: '摘要算法 不可逆', to: '/tools/MD5', iconUrl: '/img/MD5.png' },
+    { id: 5, name: 'Time工具', summary: '时间格式处理', to: '/tools/TimeTool', iconUrl: '/img/time.png' },
+    { id: 6, name: 'Color工具', summary: '颜色工具', to: '/tools/Color', iconUrl: '/img/color.png' },
+    { id: 7, name: 'Regex工具', summary: '正则表达式', to: '/tools/RegexTool', iconUrl: '/img/regex.png' }
   ]
   return {
     props: {

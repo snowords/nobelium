@@ -1,22 +1,22 @@
 import { useState } from 'react'
-import { Input, Button } from 'antd';
-import { DownloadOutlined} from '@ant-design/icons';
+import { Input, Button } from 'antd'
+import { DownloadOutlined } from '@ant-design/icons'
 import QRCodeReact from 'qrcode.react'
 
-function QRCode() {
-  const [text, setText] = useState("")
+function QRCode () {
+  const [text, setText] = useState('')
 
   const textChange = e => setText(e.target.value)
   const { TextArea } = Input
 
   const downloadPic = () => {
-    const canvas = document.getElementById("qrImg")
+    const canvas = document.getElementById('qrImg')
     const pngUrl = canvas
-      .toDataURL("image/png")
-      .replace("image/png", "image/octet-stream")
-    const downloadLink = document.createElement("a")
+      .toDataURL('image/png')
+      .replace('image/png', 'image/octet-stream')
+    const downloadLink = document.createElement('a')
     downloadLink.href = pngUrl
-    downloadLink.download = "二维码.png"
+    downloadLink.download = '二维码.png'
     document.body.appendChild(downloadLink)
     downloadLink.click()
     document.body.removeChild(downloadLink)
@@ -35,10 +35,9 @@ function QRCode() {
         />
       </div>
       <div className="p-4 rounded-md bg-white bg-opacity-80 text-lg justify-self-center">
-        <QRCodeReact 
+        <QRCodeReact
           id="qrImg"
           value={text}
-          
           />
       </div>
       <div className="justify-self-center">

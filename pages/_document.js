@@ -50,7 +50,7 @@ class MyDocument extends Document {
                 crossOrigin="anonymous"
               />
             </>
-          )}
+              )}
           <script data-ad-client="ca-pub-7498496615275901" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
           {['zh', 'ja', 'ko'].includes(

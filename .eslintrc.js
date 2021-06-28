@@ -24,7 +24,7 @@ module.exports = {
   },
   rules: {
     'react/prop-types': 'off',
-    'react/jsx-key': 'off'
+    'react/jsx-key': 'off',
   },
   globals: {
     React: true

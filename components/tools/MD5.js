@@ -1,18 +1,17 @@
 import { useState } from 'react'
-import { Input } from 'antd';
+import { Input } from 'antd'
 import sha256 from 'crypto-js/sha256'
 
-function MD5() {
-  const [text, setText] = useState("")
-  const [encodeText, setEncodeText] = useState("")
+function MD5 () {
+  const [text, setText] = useState('')
+  const [encodeText, setEncodeText] = useState('')
 
   const textChange = e => {
     setText(e.target.value)
-    if(e.target.value){
+    if (e.target.value) {
       setEncodeText(sha256(e.target.value))
     }
   }
-  
   const { TextArea } = Input
 
   return (

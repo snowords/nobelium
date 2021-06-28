@@ -13,15 +13,15 @@ const Tool = () => {
   const { tool } = router.query
 
   const toolsList = new Map([
-    [ "TimeTool", <TimeTool />],
-    [ "Base64", <Base64 />],
-    [ "Markdown", <Markdown />],
-    [ "MD5", <MD5 />],
-    [ "QRCode", <QRCode />],
-    [ "RegexTool", <RegexTool />],
+    ['TimeTool', <TimeTool />],
+    ['Base64', <Base64 />],
+    ['Markdown', <Markdown />],
+    ['MD5', <MD5 />],
+    ['QRCode', <QRCode />],
+    ['RegexTool', <RegexTool />]
   ])
 
-  const ToolComBox =  toolsList.get(tool); 
+  const ToolComBox = toolsList.get(tool)
   return (
     <Container title={tool} description='在线小工具，尽情享用哦~'>
       {ToolComBox}

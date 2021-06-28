@@ -40,9 +40,9 @@ const Markdown = () => {
           />
         </div>
         <div className="p-4 rounded-md bg-white bg-opacity-80 text-lg">
-          <ReactMarkdown 
+          <ReactMarkdown
             className=""
-            remarkPlugins={[remarkGfm, remarkToc, remarkSlug]} 
+            remarkPlugins={[remarkGfm, remarkToc, remarkSlug]}
             rehypePlugins={[rehypeHighlight, rehypeRaw]}
             >
             {text}

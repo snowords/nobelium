@@ -1,29 +1,28 @@
 import { useState } from 'react'
-import { Input} from 'antd';
-import enBase64 from 'crypto-js/enc-base64';
+import { Input } from 'antd'
+import enBase64 from 'crypto-js/enc-base64'
 
-function Base64() {
-  const [text, setText] = useState("")
-  const [encodeText, setEncodeText] = useState("")
-  const [encodedText, setEncodedText] = useState("")
+function Base64 () {
+  const [text, setText] = useState('')
+  const [encodeText, setEncodeText] = useState('')
+  const [encodedText, setEncodedText] = useState('')
 
   const textChange = e => {
     setText(e.target.value)
-    if(e.target.value){
+    if (e.target.value) {
       setEncodeText(window.btoa(e.target.value))
       setEncodedText(enBase64(e.target.value))
     }
   }
   const enCodeTextChange = e => {
     setEncodeText(e.target.value)
-    if(e.target.value){
+    if (e.target.value) {
       setText(window.atob(e.target.value))
     }
   }
   const { TextArea } = Input
 
   return (
-
     <div className="grid p-2 grid-cols-1 md:grid-cols-2 gap-4">
       <div className="p-4 rounded-md bg-gray-800 bg-opacity-80">
         <TextArea

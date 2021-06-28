@@ -24,7 +24,7 @@ export async function getStaticProps (context) {
   const totalPosts = posts.length
   const showNext = page * BLOG.postsPerPage < totalPosts
   const totalPages = Math.ceil(totalPosts / BLOG.postsPerPage)
-  const nowPage = "第"+ page +"页 / 共" + totalPages + "页"
+  const nowPage = '第' + page + '页 / 共' + totalPages + '页'
   return {
     props: {
       page, // Current Page

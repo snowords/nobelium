@@ -22,13 +22,12 @@ const BlogPost = ({ post }) => {
           {post.summary}
         </p>
       </main>
-      {post.isTop ? (
-        <div>
-          <p className="absolute -top-0.5 -right-0.5 p-1 border-t-4 border-r-4 border-red-400 text-sm"> </p>
-          <p className="absolute -top-0.5 -left-0.5 p-1 border-t-4 border-l-4 border-red-400"> </p>
-        </div>
-      ) : ''}
-      
+      {post.isTop
+        ? (<div>
+            <p className="absolute -top-0.5 -right-0.5 p-1 border-t-4 border-r-4 border-red-400 text-sm"> </p>
+            <p className="absolute -top-0.5 -left-0.5 p-1 border-t-4 border-l-4 border-red-400"> </p>
+          </div>)
+        : ''}
     </article>
   )
 }
