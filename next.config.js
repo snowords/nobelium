@@ -3,7 +3,15 @@ module.exports = {
   images: {
     domains: ['gravatar.com']
   },
-  async headers() {
+  eslint: {
+    dirs: [
+      'components',
+      'layouts',
+      'lib',
+      'pages'
+    ]
+  },
+  async headers () {
     return [
       {
         source: '/:path*{/}?',

@@ -4,7 +4,11 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: ['plugin:react/recommended', 'standard', 'prettier'],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:@next/next/recommended',
+    'standard'
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
@@ -15,7 +19,7 @@ module.exports = {
   plugins: ['react'],
   settings: {
     react: {
-      version: 'detect' // React version. "detect" automatically picks the version you have installed.
+      version: 'detect'
     }
   },
   rules: {
