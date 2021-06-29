@@ -7,6 +7,7 @@ import formatDate from '@/lib/formatDate'
 import { useLocale } from '@/lib/locale'
 import { useRouter } from 'next/router'
 import Comments from '@/components/Comments'
+import { Divider } from 'antd'
 
 const mapPageUrl = id => {
   return 'https://www.notion.so/' + id.replace(/-/g, '')
@@ -78,6 +79,16 @@ const Layout = ({
             />
           </div>
         )}
+        <Divider><div className="dark:text-white">如果文章读后有收获，欢迎打赏~</div></Divider>
+        <div className="flex justify-center p-2">
+          <Image
+            className="rounded-lg"
+            alt="MoneyPic"
+            width={256}
+            height={256}
+            src="/img/money.jpg"
+          />
+        </div>
       </article>
       <div className="flex justify-between font-medium text-gray-500 dark:text-gray-400">
         <a>
