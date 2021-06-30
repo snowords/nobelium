@@ -10,7 +10,8 @@ export async function getStaticProps () {
     { id: 4, name: 'MD5加密', summary: '摘要算法 不可逆', to: '/tools/MD5', iconUrl: '/img/MD5.png' },
     { id: 5, name: 'Time工具', summary: '时间格式处理', to: '/tools/TimeTool', iconUrl: '/img/time.png' },
     { id: 6, name: 'Color工具', summary: '颜色工具', to: '/tools/Color', iconUrl: '/img/color.png' },
-    { id: 7, name: 'Regex工具', summary: '正则表达式', to: '/tools/RegexTool', iconUrl: '/img/regex.png' }
+    { id: 7, name: 'Regex工具', summary: '正则表达式', to: '/tools/RegexTool', iconUrl: '/img/regex.png' },
+    { id: 8, name: '挪车电话', summary: 'CallMe挪车电话', to: '/tools/CallMe', iconUrl: '/img/call.png' },
   ]
   return {
     props: {
@@ -22,7 +23,7 @@ const Tools = ({ toolsList }) => {
   return (
     <Container className="bg-gray-600" title='在线工具' description='在线工具集合，不定期更新'>
       <p className="mb-4 text-xl text-gray-500">在线小工具</p>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {toolsList.map(tool => (
           <Link href={tool.to} key={tool.id}>
             <a>

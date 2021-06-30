@@ -50,7 +50,7 @@ function QRCode () {
       </div>
       <div className="justify-self-center">
         <Button type="primary" shape="round" onClick={callPhone}>
-          拨号测试
+          拨打挪车电话测试
         </Button>
       </div>
     </div>
