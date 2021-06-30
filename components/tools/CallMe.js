@@ -2,7 +2,6 @@ import { Button } from 'antd'
 import Image from 'next/image'
 
 function CallMe () {
-
   const callPhone = () => {
     window.location.href = 'tel:13061417969'
   }
