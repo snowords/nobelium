@@ -21,10 +21,6 @@ function QRCode () {
     downloadLink.click()
     document.body.removeChild(downloadLink)
   }
-
-  const callPhone = () => {
-    window.location.href = 'tel:13061417969'
-  }
   return (
     <div className="grid p-2 grid-cols-1 md:grid-cols-2 gap-4">
       <div className="p-4 row-span-2 rounded-md bg-gray-800 bg-opacity-80">
@@ -46,11 +42,6 @@ function QRCode () {
       <div className="justify-self-center">
         <Button type="primary" shape="round" icon={<DownloadOutlined />} onClick={downloadPic}>
           Download
-        </Button>
-      </div>
-      <div className="justify-self-center">
-        <Button type="primary" shape="round" onClick={callPhone}>
-          拨打挪车电话测试
         </Button>
       </div>
     </div>
