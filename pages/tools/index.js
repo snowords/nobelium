@@ -11,7 +11,7 @@ export async function getStaticProps () {
     { id: 5, name: 'Time工具', summary: '时间格式处理', to: '/tools/TimeTool', iconUrl: '/img/time.png' },
     { id: 6, name: 'Color工具', summary: '颜色工具', to: '/tools/Color', iconUrl: '/img/color.png' },
     { id: 7, name: 'Regex工具', summary: '正则表达式', to: '/tools/RegexTool', iconUrl: '/img/regex.png' },
-    { id: 8, name: '挪车电话', summary: 'CallMe挪车电话', to: '/tools/CallMe', iconUrl: '/img/call.png' },
+    { id: 8, name: '挪车电话', summary: 'CallMe挪车电话', to: '/tools/CallMe', iconUrl: '/img/call.png' }
   ]
   return {
     props: {
