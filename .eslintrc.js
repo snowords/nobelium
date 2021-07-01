@@ -9,6 +9,7 @@ module.exports = {
     'plugin:@next/next/recommended',
     'standard'
   ],
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: true
