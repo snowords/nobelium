@@ -6,7 +6,7 @@ import { useLocale } from '@/lib/locale'
 
 const NavBar = () => {
   const locale = useLocale()
-  const versionPage = 'https://www.notion.so/snowords/cb7d2e9d431749a89506b4300b5e9e98?v=796e50e7c0f340bebc6b81e9dd582316'
+  const versionPage = 'https://www.notion.so/snowords/cb7d2e9d431749a89506b4300b5e9e98?v=ed3a2f9d6c6c470c96da8d519b4b6cc0'
   const links = [
     { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
     { id: 1, name: locale.NAV.SEARCH, to: '/search', show: true },
@@ -75,14 +75,15 @@ const Header = ({ navBarTitle, fullWidth }) => {
               src="/img/logo.png"
             />
           </a>
-          {navBarTitle
+          <div className="pl-2 font-bold text-lg mb-1 text-night dark:text-day">Snoword’s Blog</div>
+          {/* {navBarTitle
             ? (<p className="ml-2 font-medium text-day dark:text-night header-name">
                 {navBarTitle}
               </p>)
             : (<p className="ml-2 font-medium text-day dark:text-night header-name">
                 {BLOG.title},{' '}
                 <span className="font-normal">{BLOG.description}</span>
-              </p>)}
+              </p>)} */}
         </div>
         <NavBar />
       </div>

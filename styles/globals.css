@@ -82,7 +82,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .sticky-nav-full {
-  @apply border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
+  @apply border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50 shadow-md;
 }
 
 .header-name {
@@ -150,4 +150,8 @@ nav {
 
 .notion-h-title {
   @apply dark:text-white;
+}
+
+.smFull {
+  height: calc(100vh - 112px - 2rem);
 }

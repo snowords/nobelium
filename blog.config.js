@@ -17,7 +17,8 @@ const BLOG = {
   showArchive: true, // WIP
   autoCollapsedNavBar: false, // the automatically collapsed navigation bar
   socialLink: 'https://twitter.com/snoword1024',
-  seo: {
+  githubLink: 'https://github.com/snowords',
+  seo:{
     keywords: ['Blog', 'Website', 'Notion'],
     googleSiteVerification: 'beUFeNNyZVeRqPbjnjIDdt6d6EFxtwYhAcynXXLE9u0' // Remove the value or replace it with your own google site verification code
   },
