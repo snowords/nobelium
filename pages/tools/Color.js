@@ -2,7 +2,6 @@ import { RgbaColorPicker } from 'react-colorful'
 import { useState } from 'react'
 import { Form, Input, Button } from 'antd'
 import Container from '@/components/Container'
-import _ from 'lodash'
 
 function Color () {
   const [color, setColor] = useState({ r: 200, g: 150, b: 35, a: 0.5 })
@@ -56,12 +55,16 @@ function Color () {
 
   const randomColor = () => {
     const colorObj = {
-      r: _.random(0, 255),
-      g: _.random(0, 255),
-      b: _.random(0, 255),
+      r: randomNum(0, 255),
+      g: randomNum(0, 255),
+      b: randomNum(0, 255),
       a: 0.5
     }
     changeColor(colorObj)
+  }
+
+  const randomNum = (x,y) => {
+    return parseInt(Math.random()*(y+1-x)+x);
   }
 
   return (
