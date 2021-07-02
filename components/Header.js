@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
+import { Menu, Dropdown } from 'antd'
+import { MenuOutlined } from '@ant-design/icons'
 
 const NavBar = () => {
   const locale = useLocale()
@@ -14,9 +16,24 @@ const NavBar = () => {
     { id: 3, name: locale.NAV.RSS, to: versionPage, show: true },
     { id: 4, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout }
   ]
+  const menu = (
+    <Menu className="dark:bg-gray-600 shadow-lg">
+      {links.map(link => link.show && (
+        <Menu.Item
+          className="dark:text-gray-200 hover:bg-gray-400 mx-2"
+          key={link.id}>
+            <Link href={link.to}>
+              <a target="_blank">{link.name}</a>
+            </Link>
+        </Menu.Item>
+      )
+      )}
+    </Menu>
+  )
+
   return (
     <div className="flex-shrink-0">
-      <ul className="flex flex-row">
+      <ul className="md:flex flex-row hidden">
         {links.map(link => link.show && (
           <li
             key={link.id}
@@ -29,6 +46,13 @@ const NavBar = () => {
         )
         )}
       </ul>
+      <div className="md:hidden -mt-1 pb-2 px-4">
+        <Dropdown overlay={menu} trigger={['click']}>
+          <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+            <MenuOutlined className="text-night dark:text-day"/>
+          </a>
+        </Dropdown>
+      </div>
     </div>
   )
 }

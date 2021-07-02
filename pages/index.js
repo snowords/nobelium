@@ -14,24 +14,25 @@ export async function getStaticProps () {
   const totalPages = Math.ceil(totalPosts / BLOG.postsPerPage)
   const nowPage = '第1页 / 共' + totalPages + '页'
   const colorStyle = {
-    background: 'url(/img/bg.svg) center 0/contain no-repeat content-box fixed',
     backgroundSize: '100% 100vh'
   }
+  const addOnClass = 'bg-mobilebg md:bg-desktopbg bg-left-top bg-contain bg-no-repeat bg-clip-content bg-fixed'
   return {
     props: {
       page: 1, // current page is 1
       postsToShow,
       showNext,
       nowPage,
-      colorStyle
+      colorStyle,
+      addOnClass
     },
     revalidate: 1
   }
 }
 
-const blog = ({ postsToShow, page, showNext, nowPage, colorStyle }) => {
+const blog = ({ postsToShow, page, showNext, nowPage, colorStyle, addOnClass }) => {
   return (
-    <Container title={BLOG.title} description={BLOG.description} containerStyle={colorStyle}>
+    <Container title={BLOG.title} description={BLOG.description} containerStyle={colorStyle} addOnClass={addOnClass}>
       <div className="smFull grid grid-cols-1 text-center text-2xl text-night dark:text-day">
         <div className="self-center text-3xl">
           鹏程万里，始于一跃

@@ -63,8 +63,8 @@ function Color () {
     changeColor(colorObj)
   }
 
-  const randomNum = (x,y) => {
-    return parseInt(Math.random()*(y+1-x)+x);
+  const randomNum = (x, y) => {
+    return parseInt(Math.random() * (y + 1 - x) + x)
   }
 
   return (

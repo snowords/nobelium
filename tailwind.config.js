@@ -33,7 +33,11 @@ module.exports = {
           'BlinkMacSystemFont',
           'sans-serif'
         ]
-      }
+      },
+      backgroundImage: theme => ({
+        'desktopbg': "url('/img/bg.svg')",
+        'mobilebg': "url('/img/bgMobile.svg')",
+       })
     }
   },
   variants: {

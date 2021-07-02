@@ -5,7 +5,7 @@ import Head from 'next/head'
 import PropTypes from 'prop-types'
 // import BlogPost from './BlogPost'
 
-const Container = ({ children, layout, fullWidth, containerStyle, ...customMeta }) => {
+const Container = ({ children, layout, fullWidth, ...customMeta }) => {
   const url = BLOG.path.length ? `${BLOG.link}/${BLOG.path}` : BLOG.link
   const meta = {
     title: BLOG.title,
@@ -13,7 +13,7 @@ const Container = ({ children, layout, fullWidth, containerStyle, ...customMeta 
     ...customMeta
   }
   return (
-    <div className="transition-all" style={containerStyle}>
+    <div className={'transition-all ' + customMeta.addOnClass} style={customMeta.containerStyle}>
       <Head>
         <title>{meta.title}</title>
         <meta content={BLOG.darkBackground} name="theme-color" />
