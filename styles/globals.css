@@ -153,5 +153,5 @@ nav {
 }
 
 .smFull {
-  height: calc(100vh - 112px - 2rem);
+  height: calc(100vh - 50px);
 }

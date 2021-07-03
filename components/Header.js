@@ -46,7 +46,7 @@ const NavBar = () => {
         )
         )}
       </ul>
-      <div className="md:hidden -mt-1 pb-2 px-4">
+      <div className="md:hidden -mt-1 pb-2 px-4 text-lg">
         <Dropdown overlay={menu} trigger={['click']}>
           <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
             <MenuOutlined className="text-night dark:text-day"/>
@@ -84,7 +84,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
     <>
       <div className="observer-element h-4 md:h-12" ref={sentinalRef}></div>
       <div
-        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-8 py-8 bg-opacity-60 ${
+        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-8 py-4 md:py-8 bg-opacity-60 ${
           !fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'
         }`}
         id="sticky-nav"

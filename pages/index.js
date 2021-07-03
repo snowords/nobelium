@@ -37,7 +37,7 @@ const blog = ({ postsToShow, page, showNext, nowPage, colorStyle, addOnClass }) 
         <div className="self-center text-3xl">
           鹏程万里，始于一跃
         </div>
-        <div className="self-end pb-8 flex justify-center gap-4">
+        <div className="self-end pb-8 md:pb-28 flex justify-center gap-4">
           <Link href={BLOG.githubLink}>
             <a target="_blank">
               <GithubOutlined />
