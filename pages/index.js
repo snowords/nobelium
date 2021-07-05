@@ -38,12 +38,12 @@ const blog = ({ postsToShow, page, showNext, nowPage, colorStyle, addOnClass }) 
           鹏程万里，始于一跃
         </div>
         <div className="self-end pb-8 md:pb-28 flex justify-center gap-4">
-          <Link href={BLOG.githubLink}>
+          <Link href={BLOG.githubLink} rel="noopener">
             <a target="_blank">
               <GithubOutlined />
             </a>
           </Link>
-          <Link href={BLOG.socialLink}>
+          <Link href={BLOG.socialLink} rel="noopener">
             <a target="_blank">
               <TwitterOutlined />
             </a>

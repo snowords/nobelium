@@ -22,7 +22,7 @@ const NavBar = () => {
         <Menu.Item
           className="dark:text-gray-200 hover:bg-gray-400 mx-2"
           key={link.id}>
-            <Link href={link.to}>
+            <Link href={link.to} rel="noopener">
               <a target="_blank">{link.name}</a>
             </Link>
         </Menu.Item>
