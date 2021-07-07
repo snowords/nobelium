@@ -25,6 +25,7 @@
     "feed": "^4.2.2",
     "file-loader": "^6.2.0",
     "gitalk": "^1.7.2",
+    "lottie-web": "^5.7.11",
     "next": "^11.0.0",
     "notion-client": "^4.6.0",
     "notion-utils": "^4.6.0",

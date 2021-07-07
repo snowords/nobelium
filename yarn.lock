@@ -3101,6 +3101,11 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lottie-web@^5.7.11:
+  version "5.7.11"
+  resolved "https://registry.nlark.com/lottie-web/download/lottie-web-5.7.11.tgz#4ba74e8a629f76d3c0a0062ddc37d2b96e13765c"
+  integrity sha1-S6dOimKfdtPAoAYt3DfSuW4Tdlw=
+
 lowercase-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/lowercase-keys/download/lowercase-keys-2.0.0.tgz"
