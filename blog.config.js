@@ -3,7 +3,7 @@ const BLOG = {
   author: 'Snoword',
   email: '33chijian@gmail.com',
   link: 'https://snoword.xyz',
-  description: '这是一个分享想法，记录技术的个人博客。',
+  description: '如来说世界，皆非世界，是名世界。',
   lang: 'zh-CN',
   appearance: 'auto', // ['light', 'dark', 'auto'],
   font: 'sans-serif', // ['sans-serif', 'serif']
