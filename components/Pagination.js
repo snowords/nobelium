@@ -5,8 +5,12 @@ import { useLocale } from '@/lib/locale'
 const Pagination = ({ page, showNext, nowPage }) => {
   const locale = useLocale()
   const currentPage = +page
+  let additionalClassName = 'justify-between'
+  if (currentPage === 1 && showNext) additionalClassName = 'justify-end'
+  if (currentPage !== 1 && !showNext) additionalClassName = 'justify-start'
   return (
-    <div className="flex justify-between font-medium text-black dark:text-gray-100">
+    <div className={`flex font-medium text-black dark:text-gray-100 ${additionalClassName}`}>
+      {currentPage !== 1 && (
       <Link
         href={
           currentPage - 1 === 1
@@ -17,25 +21,22 @@ const Pagination = ({ page, showNext, nowPage }) => {
         <a>
           <button
             rel="prev"
-            className={`${
-              currentPage === 1 ? 'invisible' : 'block'
-            } cursor-pointer p-2 rounded-xl hover:bg-white hover:shadow transition-all duration-500 `}
+            className="block cursor-pointer"
           >
             ← {locale.PAGINATION.PREV}
           </button>
         </a>
       </Link>
-      <p className="font-normal text-gray-500">{nowPage}</p>
-      <Link href={`/page/${currentPage + 1}`}>
-        <a>
-          <button
-            rel="next"
-            className={`${+showNext ? 'block' : 'invisible'} cursor-pointer p-2 rounded-xl hover:bg-white hover:shadow transition-all duration-500 `}
-          >
-            {locale.PAGINATION.NEXT} →
-          </button>
-        </a>
-      </Link>
+      )}
+      {showNext && (
+        <Link href={`/page/${currentPage + 1}`}>
+          <a>
+            <button rel="next" className="block cursor-pointer">
+              {locale.PAGINATION.NEXT} →
+            </button>
+          </a>
+        </Link>
+      )}
     </div>
   )
 }
