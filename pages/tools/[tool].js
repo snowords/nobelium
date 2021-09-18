@@ -8,6 +8,7 @@ import MD5 from '@/components/tools/MD5'
 import QRCode from '@/components/tools/QRCode'
 import RegexTool from '@/components/tools/RegexTool'
 import CallMe from '@/components/tools/CallMe'
+import CssGroup from '@/components/tools/CssGroup'
 
 const Tool = () => {
   const router = useRouter()
@@ -20,7 +21,8 @@ const Tool = () => {
     ['MD5', <MD5 />],
     ['QRCode', <QRCode />],
     ['RegexTool', <RegexTool />],
-    ['CallMe', <CallMe />]
+    ['CallMe', <CallMe />],
+    ['CssGroup', <CssGroup />]
   ])
 
   const ToolComBox = toolsList.get(tool)
