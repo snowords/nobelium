@@ -155,3 +155,21 @@ nav {
 .smFull {
   height: calc(100vh - 50px);
 }
+
+/* 修改滚动条样式 */
+::-webkit-scrollbar {
+  background-color: rgba(27,27,27,.4);
+  border-radius: 10px;
+  width: 0px;
+  height:3px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(27,27,27,.4);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #fff;
+}
