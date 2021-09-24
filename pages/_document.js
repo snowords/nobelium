@@ -116,9 +116,7 @@ class MyDocument extends Document {
           <link rel='apple-touch-icon' sizes='167x167' href='/icons/logo.png' />
           <link rel='manifest' href='/manifest.json' />
           <link rel='mask-icon' href='/icons/logo.svg' color='#5bbad5' />
-
-{/* 
-          <meta name='twitter:card' content='summary' />
+          {/* <meta name='twitter:card' content='summary' />
           <meta name='twitter:url' content='https://yourdomain.com' />
           <meta name='twitter:title' content='Snoword Blog' />
           <meta name='twitter:description' content='如来说世界，皆非世界，是名世界。' />
