@@ -117,7 +117,7 @@ class MyDocument extends Document {
           <link rel='manifest' href='/manifest.json' />
           <link rel='mask-icon' href='/icons/logo.svg' color='#5bbad5' />
 
-          {/* 
+{/* 
           <meta name='twitter:card' content='summary' />
           <meta name='twitter:url' content='https://yourdomain.com' />
           <meta name='twitter:title' content='Snoword Blog' />
