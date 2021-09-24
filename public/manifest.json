@@ -2,7 +2,7 @@
   "name": "Snoword’s Personal Blog",
   "short_name": "Snword",
   "theme_color": "#ffffff",
-  "background_color": "#004740",
+  "background_color": "#1E4165",
   "display": "fullscreen",
   "orientation": "portrait",
   "scope": "/",
