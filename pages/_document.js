@@ -91,8 +91,8 @@ class MyDocument extends Document {
           {BLOG.appearance === 'auto'
             ? (
             <>
-            <meta name="theme-color" content={BLOG.lightBackground} media="(prefers-color-scheme: light)"/>
-            <meta name="theme-color" content={BLOG.darkBackground} media="(prefers-color-scheme: dark)"/>
+            <meta name="theme-color" content={BLOG.lightBackground} media="(prefers-color-scheme: dark)"/>
+            <meta name="theme-color" content={BLOG.darkBackground} media="(prefers-color-scheme: light)"/>
             </>
               )
             : (
@@ -101,29 +101,23 @@ class MyDocument extends Document {
           }
 
           {/* 增加PWA配置 */}
-          <meta name='application-name' content='Snoword Blog' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
           <meta name='apple-mobile-web-app-status-bar-style' content='default' />
           <meta name='apple-mobile-web-app-title' content='Snoword Blog' />
-          <meta name='description' content='如来说世界，皆非世界，是名世界。' />
           <meta name='format-detection' content='telephone=no' />
           <meta name='mobile-web-app-capable' content='yes' />
           <meta name='msapplication-config' content='/icons/browserconfig.xml' />
           <meta name='msapplication-TileColor' content='#2B5797' />
           <meta name='msapplication-tap-highlight' content='no' />
-          <meta name='theme-color' content='#1E4165' />
 
           <link rel='apple-touch-icon' href='/icons/logo.png' />
           <link rel='apple-touch-icon' sizes='152x152' href='/icons/logo.png' />
           <link rel='apple-touch-icon' sizes='180x180' href='/icons/logo.png' />
           <link rel='apple-touch-icon' sizes='167x167' href='/icons/logo.png' />
-          <link rel='icon' type='image/png' sizes='32x32' href='/icons/logo.png' />
-          <link rel='icon' type='image/png' sizes='16x16' href='/icons/logo.png' />
           <link rel='manifest' href='/manifest.json' />
           <link rel='mask-icon' href='/icons/logo.svg' color='#5bbad5' />
-          <link rel='shortcut icon' href='/favicon.ico' />
-          <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
 
+          {/* 
           <meta name='twitter:card' content='summary' />
           <meta name='twitter:url' content='https://yourdomain.com' />
           <meta name='twitter:title' content='Snoword Blog' />
@@ -136,7 +130,7 @@ class MyDocument extends Document {
           <meta property='og:description' content='如来说世界，皆非世界，是名世界。' />
           <meta property='og:site_name' content='Snoword Blog' />
           <meta property='og:url' content='https://yourdomain.com' />
-          <meta property='og:image' content='https://yourdomain.com/icons/apple-touch-icon.png' />
+          <meta property='og:image' content='https://yourdomain.com/icons/apple-touch-icon.png' /> */}
 
           {/* <!-- apple splash screen images --> */}
 
