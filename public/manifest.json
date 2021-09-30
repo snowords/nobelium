@@ -49,5 +49,10 @@
       "type": "image/png"
     }
   ],
-  "splash_pages": null
+  "splash_pages": [
+    {
+      "src": "icons/logo.png",
+      "media": "(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+    }
+  ]
 }

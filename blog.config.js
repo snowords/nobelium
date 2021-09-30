@@ -4,7 +4,7 @@ const BLOG = {
   email: '33chijian@gmail.com',
   link: 'https://snoword.online',
   description: '如来说世界，皆非世界，是名世界。',
-  lang: 'zh-CN',
+  lang: 'zh',
   appearance: 'auto', // ['light', 'dark', 'auto'],
   font: 'sans-serif', // ['sans-serif', 'serif']
   lightBackground: '#ffffff', // use hex value, don't forget '#' e.g #fffefc
