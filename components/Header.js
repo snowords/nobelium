@@ -8,12 +8,11 @@ import { MenuOutlined } from '@ant-design/icons'
 
 const NavBar = () => {
   const locale = useLocale()
-  const versionPage = 'https://www.notion.so/snowords/cb7d2e9d431749a89506b4300b5e9e98?v=ed3a2f9d6c6c470c96da8d519b4b6cc0'
   const links = [
     { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
     { id: 1, name: locale.NAV.SEARCH, to: '/search', show: true },
     { id: 2, name: locale.NAV.TOOLS, to: '/tools', show: true },
-    { id: 3, name: locale.NAV.RSS, to: versionPage, show: true },
+    { id: 3, name: locale.NAV.RSS, to: '/changeLog', show: true },
     { id: 4, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout }
   ]
   const menu = (

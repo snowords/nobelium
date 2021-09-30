@@ -28,6 +28,7 @@ module.exports = {
     'react/jsx-key': 'off',
     '@next/next/no-document-import-in-page': 'off',
     '@next/next/no-html-link-for-pages': 'off',
+    'no-unused-vars': 'off'
   },
   globals: {
     React: true
