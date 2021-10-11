@@ -173,3 +173,7 @@ nav {
   border-radius: 10px;
   background: #fff;
 }
+
+.autoGrid{
+  grid-template-columns: 1fr auto;
+}
