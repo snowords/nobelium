@@ -6,7 +6,6 @@ import Image from 'next/image'
 export async function getStaticProps () {
   const res = await getChangeLog()
   const resData = []
-  console.log(res.block)
   for (const b in res.block) {
     const blockValue = res.block[b].value
     if (blockValue.properties && blockValue.type === 'text') {
