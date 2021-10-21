@@ -36,7 +36,8 @@ const blog = ({ postsToShow, page, showNext, nowPage, colorStyle, addOnClass }) 
       <div className="smFull grid grid-cols-1 text-center text-2xl text-night dark:text-day">
         <div className="self-center text-4xl">
           {/* 如来说世界<br />皆非世界<br />是名世界 */}
-          缘起性空
+          {/* 缘起性空 */}
+          知易行难，混乱即阶梯。
         </div>
         <div className="self-end pb-8 md:pb-28 flex justify-center gap-4">
           <Link href={BLOG.githubLink} rel="noopener">
