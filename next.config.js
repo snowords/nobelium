@@ -10,7 +10,7 @@ module.exports = withPWA({
 module.exports = {
   webpack5: true,
   images: {
-    domains: ['avatars.githubusercontent.com']
+    domains: ['avatars.githubusercontent.com', 'i.loli.net']
   },
   eslint: {
     dirs: [
