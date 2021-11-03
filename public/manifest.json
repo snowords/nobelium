@@ -1,9 +1,8 @@
 {
   "name": "Snoword’s Personal Blog",
   "short_name": "Snoword",
-  "theme_color": "#264F78", // 蓝色 
-  "background_color": "#F9D103", // 黄色 This will be the theme color on Chrome, Opera and Android
-  "display": "fullscreen",
+  "theme_color": "#111827",
+  "background_color": "#111827",
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
