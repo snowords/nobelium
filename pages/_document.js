@@ -88,8 +88,8 @@ class MyDocument extends Document {
           {BLOG.appearance === 'auto'
             ? (
             <>
-            <meta name="theme-color" content={BLOG.lightBackground} media="(prefers-color-scheme: dark)"/>
-            <meta name="theme-color" content={BLOG.darkBackground} media="(prefers-color-scheme: light)"/>
+            <meta name="theme-color" content={BLOG.lightBackground} media="(prefers-color-scheme: light)"/>
+            <meta name="theme-color" content={BLOG.darkBackground} media="(prefers-color-scheme: dark)"/>
             </>
               )
             : (
