@@ -1,8 +1,8 @@
 {
   "name": "Snoword’s Personal Blog",
-  "short_name": "Snword",
-  "theme_color": "#ffffff",
-  "background_color": "#1E4165",
+  "short_name": "Snoword",
+  "theme_color": "#264F78",
+  "background_color": "#F9D103",
   "display": "fullscreen",
   "orientation": "portrait",
   "scope": "/",
