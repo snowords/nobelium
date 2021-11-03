@@ -38,7 +38,7 @@ export default function changeLog ({ changeData, count }) {
             <div className="transition-all duration-300 bg-white dark:bg-gray-800 dark:text-white p-4 my-6 rounded-md hover:shadow-lg" key={key}>
               <div className="grid autoGrid gap-3 my-2">
                 <div className="text-xl font-semibold">{item.title}</div>
-                <div className="flex bg-blue-200 rounded-md p-2 place-self-start">
+                <div className="flex bg-gradient-to-r from-yellow-200 via-pink-300 to-purple-300 rounded-md p-2 place-self-start">
                   <Image
                     alt="Github Commit"
                     src="/img/github.png"
