@@ -22,8 +22,8 @@ const BLOG = {
     keywords: ['Blog', 'Website', 'Notion', 'Snoword'],
     googleSiteVerification: 'beUFeNNyZVeRqPbjnjIDdt6d6EFxtwYhAcynXXLE9u0' // Remove the value or replace it with your own google site verification code
   },
-  notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
-  // notionPageId: '0102aa04979740b5a2df0bd2aa272af5', // DO NOT CHANGE  THIS    ！！！
+  // notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
+  notionPageId: '0102aa04979740b5a2df0bd2aa272af5', // DO NOT CHANGE  THIS    ！！！
   changeLogPageId: 'cb7d2e9d431749a89506b4300b5e9e98', // 更新日志的页面ID
   analytics: {
     provider: 'ga', // Currently we support Google Analytics and Ackee, please fill with 'ga' or 'ackee', leave it empty to disable it.

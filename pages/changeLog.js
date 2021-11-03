@@ -35,20 +35,29 @@ export default function changeLog ({ changeData, count }) {
       <div>
         {changeData.map((item, key) => {
           return (
-            <div className="transition-all duration-300 bg-white p-4 my-6 rounded-md hover:shadow-lg hover:bg-blue-200" key={key}>
+            <div className="transition-all duration-300 bg-white dark:bg-gray-800 dark:text-white p-4 my-6 rounded-md hover:shadow-lg" key={key}>
               <div className="grid autoGrid gap-3 my-2">
                 <div className="text-xl font-semibold">{item.title}</div>
-                <div className="bg-blue-200 border-2 border-blue-200 rounded-md p-2 place-self-start hover:bg-white">
-                  <Link className="" href={item.commitUrl}>
-                    <a target="_blank">{item.commitId}</a>
-                  </Link>
+                <div className="flex bg-blue-200 rounded-md p-2 place-self-start">
+                  <Image
+                    alt="Github Commit"
+                    src="/img/github.png"
+                    width={20}
+                    height={20}
+                    className="hover:animate-spin"
+                  />
+                  <div className="ml-2">
+                    <Link className="" href={item.commitUrl}>
+                      <a target="_blank">{item.commitId}</a>
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="flex">
                 <Image
                   alt={item.author}
-                  width={20}
-                  height={20}
+                  width={22}
+                  height={22}
                   src={item.avator}
                   className="rounded-full"
                 />
