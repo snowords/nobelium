@@ -2,6 +2,7 @@ import Container from '@/components/Container'
 import { getChangeLog } from '@/lib/notion'
 import Link from 'next/link'
 import Image from 'next/image'
+import { GraphQLClient } from 'graphql-request'
 
 export async function getStaticProps () {
   const res = await getChangeLog()
@@ -22,14 +23,37 @@ export async function getStaticProps () {
       })
     }
   }
+
+  const graphcms = new GraphQLClient(
+    process.env.GRAPHCMS_PROJECT_API,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.GRAPHCMS_PROD_AUTH_TOKEN}`
+      }
+    }
+  )
+
+  const { blogChangelogs } = await graphcms.request(
+    `
+      {
+        blogChangelogs {
+          title
+          updateTime
+          lastest
+        }
+      }
+    `
+  )
+
   return {
     props: {
+      blogChangelogs,
       changeData: resData
     }
   }
 }
 
-export default function changeLog ({ changeData, count }) {
+export default function changeLog ({ blogChangelogs, changeData }) {
   return (
     <Container>
       <div>
@@ -71,6 +95,16 @@ export default function changeLog ({ changeData, count }) {
                 </div>
                 {item.date}
               </div>
+            </div>
+          )
+        })}
+
+        {blogChangelogs.map((log, index) => {
+          return (
+            <div className="text-white" key={index}>
+              <div>{log.title}</div>
+              <div>{log.updateTime}</div>
+              <div>{log.lastest}</div>
             </div>
           )
         })}
