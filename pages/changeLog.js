@@ -2,7 +2,11 @@ import Container from '@/components/Container'
 import { getChangeLog } from '@/lib/notion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { GraphQLClient } from 'graphql-request'
+import { request } from 'graphql-request';
+import useSWR from 'swr';
+import { Form, Input, Button, Checkbox } from 'antd'
+
+const fetcher = query => request('/api/getLogs', query)
 
 export async function getStaticProps () {
   const res = await getChangeLog()
@@ -24,36 +28,51 @@ export async function getStaticProps () {
     }
   }
 
-  const graphcms = new GraphQLClient(
-    process.env.GRAPHCMS_PROJECT_API,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.GRAPHCMS_PROD_AUTH_TOKEN}`
-      }
-    }
-  )
-
-  const { blogChangelogs } = await graphcms.request(
-    `
-      {
-        blogChangelogs {
-          title
-          updateTime
-          lastest
-        }
-      }
-    `
-  )
-
   return {
     props: {
-      blogChangelogs,
       changeData: resData
     }
   }
 }
 
-export default function changeLog ({ blogChangelogs, changeData }) {
+export default function changeLog ({ changeData }) {
+
+  const { data, mutate } = useSWR(
+    [
+      `query GetAllLogs {
+        blogChangelogs {
+          title
+          lastest
+          number
+          updateTime
+        }
+      }`
+    ],
+    fetcher
+  );
+
+  console.log(data)
+
+  // async function onFinish(values){
+  //   const data = {...values, updateTime: new Date()}
+  //   console.log(data)
+  //   const { createBlogChangelog } = await graphcms.request(
+  //     `
+  //       createBlogChangelog(data: ${data}) {
+  //         id
+  //         lastest
+  //         title
+  //         updateTime
+  //       }
+  //     `
+  //   )
+  //   console.log(createBlogChangelog)
+  // };
+
+  // const onFinishFailed = (errorInfo) => {
+  //   console.log('Failed:', errorInfo);
+  // };
+
   return (
     <Container>
       <div>
@@ -99,15 +118,67 @@ export default function changeLog ({ blogChangelogs, changeData }) {
           )
         })}
 
-        {blogChangelogs.map((log, index) => {
+        <div className="bg-white p-4">
+        {/* <Form
+          name="basic"
+          labelCol={{
+            span: 8,
+          }}
+          wrapperCol={{
+            span: 16,
+          }}
+          initialValues={{
+            remember: true,
+          }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+        >
+          <Form.Item
+            label="标题"
+            name="title"
+            rules={[
+              {
+                required: true,
+                message: '输入标题!',
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            name="lastest"
+            valuePropName="lastest"
+            wrapperCol={{
+              offset: 8,
+              span: 16,
+            }}
+          >
+            <Checkbox>是否最新</Checkbox>
+          </Form.Item>
+
+          <Form.Item
+            wrapperCol={{
+              offset: 8,
+              span: 16,
+            }}
+          >
+            <Button type="primary" htmlType="submit">
+              提交
+            </Button>
+          </Form.Item>
+        </Form> */}
+
+        {/* {data.map((log, index) => {
           return (
-            <div className="text-white" key={index}>
+            <div key={index}>
               <div>{log.title}</div>
               <div>{log.updateTime}</div>
               <div>{log.lastest}</div>
             </div>
           )
-        })}
+        })} */}
+        </div>
       </div>
     </Container>
   )

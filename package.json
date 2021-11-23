@@ -43,6 +43,7 @@
     "react-notion-x": "^4.8.7",
     "react-static-tweets": "^0.5.4",
     "static-tweets": "^0.5.5",
+    "swr": "^1.0.1",
     "url-loader": "^4.1.1",
     "use-ackee": "^3.0.0"
   },

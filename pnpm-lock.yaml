@@ -38,6 +38,7 @@ specifiers:
   react-notion-x: ^4.8.7
   react-static-tweets: ^0.5.4
   static-tweets: ^0.5.5
+  swr: ^1.0.1
   tailwindcss: ^2.2.9
   url-loader: ^4.1.1
   use-ackee: ^3.0.0
@@ -66,6 +67,7 @@ dependencies:
   react-notion-x: registry.npmmirror.com/react-notion-x/4.9.8_react-dom@17.0.2+react@17.0.2
   react-static-tweets: registry.npmmirror.com/react-static-tweets/0.5.4_c26ef06698b9ab1b17bf6451df0179c6
   static-tweets: registry.npmmirror.com/static-tweets/0.5.5
+  swr: registry.npmmirror.com/swr/1.0.1_react@17.0.2
   url-loader: registry.nlark.com/url-loader/4.1.1_file-loader@6.2.0
   use-ackee: registry.npmmirror.com/use-ackee/3.0.0_react@17.0.2
 
