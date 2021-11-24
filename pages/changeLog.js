@@ -2,11 +2,7 @@ import Container from '@/components/Container'
 import { getChangeLog } from '@/lib/notion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { request } from 'graphql-request';
-import useSWR from 'swr';
-import { Form, Input, Button, Checkbox } from 'antd'
-
-const fetcher = query => request('/api/getLogs', query)
+import { Form, Input, Button, Checkbox, InputNumber  } from 'antd'
 
 export async function getStaticProps () {
   const res = await getChangeLog()
@@ -28,50 +24,35 @@ export async function getStaticProps () {
     }
   }
 
+  let cmsData = {}
+  await fetch("http://localhost:3000/api/getLogs").then(res => res.json()).then(res => {
+    cmsData = res.blogChangelogs
+  })
+
   return {
     props: {
-      changeData: resData
-    }
+      cmsData: cmsData,
+      changeData: resData,
+    },
+    revalidate: 60 * 60
   }
 }
 
-export default function changeLog ({ changeData }) {
+export default function changeLog ({ cmsData, changeData }) {
 
-  const { data, mutate } = useSWR(
-    [
-      `query GetAllLogs {
-        blogChangelogs {
-          title
-          lastest
-          number
-          updateTime
-        }
-      }`
-    ],
-    fetcher
-  );
+  const onFinish = async (values) => {
+    await fetch("/api/newLog", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({...values})
+    })
+  };
 
-  console.log(data)
-
-  // async function onFinish(values){
-  //   const data = {...values, updateTime: new Date()}
-  //   console.log(data)
-  //   const { createBlogChangelog } = await graphcms.request(
-  //     `
-  //       createBlogChangelog(data: ${data}) {
-  //         id
-  //         lastest
-  //         title
-  //         updateTime
-  //       }
-  //     `
-  //   )
-  //   console.log(createBlogChangelog)
-  // };
-
-  // const onFinishFailed = (errorInfo) => {
-  //   console.log('Failed:', errorInfo);
-  // };
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
 
   return (
     <Container>
@@ -119,65 +100,78 @@ export default function changeLog ({ changeData }) {
         })}
 
         <div className="bg-white p-4">
-        {/* <Form
-          name="basic"
-          labelCol={{
-            span: 8,
-          }}
-          wrapperCol={{
-            span: 16,
-          }}
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
-        >
-          <Form.Item
-            label="标题"
-            name="title"
-            rules={[
-              {
-                required: true,
-                message: '输入标题!',
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            name="lastest"
-            valuePropName="lastest"
+          <Form
+            name="basic"
+            labelCol={{
+              span: 8,
+            }}
             wrapperCol={{
-              offset: 8,
               span: 16,
             }}
-          >
-            <Checkbox>是否最新</Checkbox>
-          </Form.Item>
-
-          <Form.Item
-            wrapperCol={{
-              offset: 8,
-              span: 16,
+            initialValues={{
+              remember: true,
             }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            autoComplete="off"
           >
-            <Button type="primary" htmlType="submit">
-              提交
-            </Button>
-          </Form.Item>
-        </Form> */}
+            <Form.Item
+              label="序号"
+              name="number"
+              rules={[
+                {
+                  required: true,
+                  message: '输入序号!',
+                },
+              ]}
+            >
+              <InputNumber min={1} max={10000} defaultValue={8888} />
+            </Form.Item>
+            <Form.Item
+              label="标题"
+              name="title"
+              rules={[
+                {
+                  required: true,
+                  message: '输入标题!',
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+            {/* <Form.Item
+              name="lastest"
+              valuePropName="lastest"
+              wrapperCol={{
+                offset: 8,
+                span: 16,
+              }}
+            >
+              <Checkbox>是否最新</Checkbox>
+            </Form.Item> */}
 
-        {/* {data.map((log, index) => {
-          return (
-            <div key={index}>
-              <div>{log.title}</div>
-              <div>{log.updateTime}</div>
-              <div>{log.lastest}</div>
-            </div>
-          )
-        })} */}
+            <Form.Item
+              wrapperCol={{
+                offset: 8,
+                span: 16,
+              }}
+            >
+              <Button type="primary" htmlType="submit">
+                提交
+              </Button>
+            </Form.Item>
+          </Form>
+
+          {cmsData.map((log, index) => {
+            return (
+              <div key={index}>
+                <div>{log.number}</div>
+                <div>{log.title}</div>
+                <div>{log.updateTime}</div>
+                <div>{log.lastest}</div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </Container>

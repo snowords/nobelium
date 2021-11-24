@@ -1,7 +1,7 @@
 import { GraphQLClient } from 'graphql-request';
 
 export default async ({ body }, res) => {
-  console.log('body', body)
+  // console.log('body', body)
   const graphcms = new GraphQLClient(
     process.env.GRAPHCMS_PROJECT_API,
     {
@@ -11,7 +11,7 @@ export default async ({ body }, res) => {
     }
   );
 
-  const { createBlogChangelog } = await graphcms.request(
+  const { blogChangelogs } = await graphcms.request(
     `query GetAllLogs {
       blogChangelogs {
         title
@@ -22,7 +22,5 @@ export default async ({ body }, res) => {
     }`
   );
 
-  console.log('createBlogChangelog', createBlogChangelog)
-
-  res.status(201).json(createBlogChangelog);
+  res.status(200).json({blogChangelogs});
 };
