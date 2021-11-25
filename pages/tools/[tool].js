@@ -10,9 +10,13 @@ import RegexTool from '@/components/tools/RegexTool'
 import CallMe from '@/components/tools/CallMe'
 import CssGroup from '@/components/tools/CssGroup'
 
+const router = useRouter()
+const { tool } = router.query
+
+if (tool === 'Article') {
+
+}
 const Tool = () => {
-  const router = useRouter()
-  const { tool } = router.query
 
   const toolsList = new Map([
     ['TimeTool', <TimeTool />],
@@ -22,7 +26,7 @@ const Tool = () => {
     ['QRCode', <QRCode />],
     ['RegexTool', <RegexTool />],
     ['CallMe', <CallMe />],
-    ['CssGroup', <CssGroup />]
+    ['CssGroup', <CssGroup />],
   ])
 
   const ToolComBox = toolsList.get(tool)

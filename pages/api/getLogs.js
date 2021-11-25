@@ -1,4 +1,4 @@
-import { GraphQLClient } from 'graphql-request';
+import { GraphQLClient } from 'graphql-request'
 
 export default async ({ body }, res) => {
   // console.log('body', body)
@@ -7,9 +7,9 @@ export default async ({ body }, res) => {
     {
       headers: {
         Authorization: `Bearer ${process.env.GRAPHCMS_PROD_AUTH_TOKEN}`
-      },
+      }
     }
-  );
+  )
 
   const { blogChangelogs } = await graphcms.request(
     `query GetAllLogs {
@@ -20,7 +20,7 @@ export default async ({ body }, res) => {
         updateTime
       }
     }`
-  );
+  )
 
-  res.status(200).json({blogChangelogs});
-};
+  res.status(200).json({ blogChangelogs })
+}
