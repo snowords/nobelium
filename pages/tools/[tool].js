@@ -13,11 +13,7 @@ import CssGroup from '@/components/tools/CssGroup'
 const router = useRouter()
 const { tool } = router.query
 
-if (tool === 'Article') {
-
-}
 const Tool = () => {
-
   const toolsList = new Map([
     ['TimeTool', <TimeTool />],
     ['Base64', <Base64 />],
@@ -26,7 +22,7 @@ const Tool = () => {
     ['QRCode', <QRCode />],
     ['RegexTool', <RegexTool />],
     ['CallMe', <CallMe />],
-    ['CssGroup', <CssGroup />],
+    ['CssGroup', <CssGroup />]
   ])
 
   const ToolComBox = toolsList.get(tool)

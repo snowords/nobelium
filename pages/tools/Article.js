@@ -3,9 +3,8 @@ import useSWR from 'swr'
 import { Form, Input, Button, Checkbox, InputNumber } from 'antd'
 
 export async function getStaticProps () {
-
   console.log('getStaticProps')
-  let cmsData = await fetch('http://localhost:3000/api/getLogs').then(res => res.json())
+  const cmsData = await fetch('http://localhost:3000/api/getLogs').then(res => res.json())
   console.log('cmsData2', cmsData.blogChangelogs)
   return {
     props: {
@@ -15,7 +14,6 @@ export async function getStaticProps () {
 }
 
 export default function Article ({ cmsData }) {
-  
   const onFinish = async (values) => {
     await fetch('/api/newLog', {
       method: 'POST',
@@ -94,7 +92,7 @@ export default function Article ({ cmsData }) {
             </Button>
           </Form.Item>
         </Form>
-        
+
         {cmsData.map((log, index) => {
           return (
             <div key={index}>
