@@ -2,7 +2,7 @@ import { useState } from 'react'
 import useSWR from 'swr'
 import Container from '@/components/Container'
 import { Form, Input, Button, message } from 'antd'
-import { PlusOutlined } from '@ant-design/icons'
+import { PlusOutlined, DeleteOutlined, LoadingOutlined } from '@ant-design/icons'
 
 const { TextArea } = Input
 
@@ -20,7 +20,10 @@ export default function Article () {
   })
   if (error) return <h1>Something went wrong!</h1>
   if (!data) {
-    return <h1>Loading...</h1>
+    return <div className="h-screen w-screen flex flex-col justify-center items-center">
+      <LoadingOutlined className="text-2xl" />
+      Loading...
+    </div>
   }
 
   const onNewNote = () => {
@@ -28,6 +31,11 @@ export default function Article () {
   }
 
   const onFinish = async (values) => {
+    console.log('values', values)
+    if (!values.content) {
+      message.error('内容不能为空！')
+      return
+    }
     setLoading(true)
     await fetch('/api/newNote', {
       method: 'POST',
@@ -43,6 +51,19 @@ export default function Article () {
     mutate([...data, values])
   }
 
+  const onDelete = async (id) => {
+    mutate(data.filter(item => item.id !== id))
+    await fetch('/api/deleteNote', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id })
+    }).then(() => {
+      message.success('删除成功！')
+    })
+  }
+
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
   }
@@ -50,34 +71,39 @@ export default function Article () {
   // todo：分解为组件
   return (
     <Container>
-      <div className="bg-white p-4">
-        <Button type="primary" shape="circle" icon={<PlusOutlined />} onClick={onNewNote} />
-        <Form
-          className={showForm ? 'block' : 'hidden'}
-          name="basic"
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
-        >
-          <Form.Item label="标题" name="title" rules={[{ required: true, message: '输入标题!' }]}>
-            <Input />
-          </Form.Item>
+      <div>
+        <Button className="my-4" type="primary" shape="circle" icon={<PlusOutlined />} onClick={onNewNote} />
+        <div className={`${showForm ? 'block' : 'hidden'} `}>
+          <Form
+            className="bg-white rounded-lg my-4 p-8 border"
+            name="basic"
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            autoComplete="off"
+          >
+            <Form.Item name="title">
+              <Input bordered={false} placeholder="标题" />
+            </Form.Item>
 
-          <Form.Item label="内容" name="content" rules={[{ required: true, message: '输入内容!' }]}>
-            <TextArea />
-          </Form.Item>
+            <Form.Item name="content">
+              <TextArea bordered={false} placeholder="添加内容..."/>
+            </Form.Item>
 
-          <Button type="primary" htmlType="submit" loading={loading}>提交</Button>
-        </Form>
+            <Button className="" type="primary" htmlType="submit" loading={loading}>提交</Button>
+          </Form>
+        </div>
 
-        {data.map((note, index) => {
-          return (
-            <div className="w-48 h-48 overflow-hidden rounded-lg border-2 p-4" key={index}>
-              <div className="text-lg">{note.title}</div>
-              <div>{note.content}</div>
-            </div>
-          )
-        })}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 place-items-center items-start">
+          {data.map((note, index) => {
+            return (
+              <div className="overflow-ellipsis overflow-hidden rounded-lg border p-4 dark:text-white bg-white" key={note.id}>
+                <div className="text-lg mb-2">{note.title}</div>
+                <div>{note.content}</div>
+                <Button className="my-4" type="danger" shape="circle" icon={<DeleteOutlined />} onClick={() => onDelete(note.id)} />
+              </div>
+            )
+          })}
+        </div>
       </div>
     </Container>
   )
