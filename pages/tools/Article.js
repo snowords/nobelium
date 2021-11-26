@@ -1,24 +1,38 @@
+import { useState } from 'react'
+import useSWR from 'swr'
 import Container from '@/components/Container'
-import { Form, Input, Button, Checkbox, InputNumber } from 'antd'
+import { Form, Input, Button, Checkbox, message, InputNumber } from 'antd'
 
-export async function getStaticProps () {
-  const cmsData = await fetch('http://localhost:3000/api/getLogs').then(res => res.json())
-  return {
-    props: {
-      cmsData: cmsData.blogChangelogs
-    }
+const fetcher = (...args) => fetch(...args).then(res => res.json())
+
+export default function Article () {
+  // 表单控制
+  const [form] = Form.useForm()
+  const [loading, setLoading] = useState(false)
+  // useSWR Hook 请求数据
+  // post 提交数据后 mutate用本地的数据替换
+  const { data, mutate, error } = useSWR('/api/getLogs', fetcher, {
+    focusThrottleInterval: 5000
+  })
+  if (error) return <h1>Something went wrong!</h1>
+  if (!data) {
+    return <h1>Loading...</h1>
   }
-}
 
-export default function Article ({ cmsData }) {
   const onFinish = async (values) => {
+    setLoading(true)
     await fetch('/api/newLog', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ ...values })
+    }).then(() => {
+      setLoading(false)
+      message.success('保存成功！')
+      form.resetFields()
     })
+    mutate([...data, values])
   }
 
   const onFinishFailed = (errorInfo) => {
@@ -84,13 +98,13 @@ export default function Article ({ cmsData }) {
               span: 16
             }}
           >
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" loading={loading}>
               提交
             </Button>
           </Form.Item>
         </Form>
 
-        {cmsData.map((log, index) => {
+        {data.map((log, index) => {
           return (
             <div key={index}>
               <div>{log.number}</div>

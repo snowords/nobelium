@@ -22,5 +22,5 @@ export default async ({ body }, res) => {
     }`
   )
 
-  res.status(200).json({ blogChangelogs })
+  res.status(200).json(blogChangelogs)
 }

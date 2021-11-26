@@ -67,5 +67,8 @@
   "bugs": {
     "url": "https://github.com/snowords/Resume/issues",
     "email": "33chijian@gmail.com"
+  },
+  "globals": {
+    "window": {}
   }
 }
