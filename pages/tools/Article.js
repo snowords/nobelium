@@ -1,11 +1,8 @@
 import Container from '@/components/Container'
-import useSWR from 'swr'
 import { Form, Input, Button, Checkbox, InputNumber } from 'antd'
 
 export async function getStaticProps () {
-  console.log('getStaticProps')
   const cmsData = await fetch('http://localhost:3000/api/getLogs').then(res => res.json())
-  console.log('cmsData2', cmsData.blogChangelogs)
   return {
     props: {
       cmsData: cmsData.blogChangelogs
