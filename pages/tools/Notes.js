@@ -30,7 +30,7 @@ export default function Article () {
     setShowForm(!showForm)
   }
 
-  const onFinish = async (values) => { 
+  const onFinish = async (values) => {
     if (!values.content) {
       message.error('内容不能为空！')
       return
