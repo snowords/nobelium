@@ -43,8 +43,8 @@ const BLOG = {
       repo: 'Resume', // The repository of store comments
       owner: 'snowords',
       admin: ['snowords'],
-      clientID: '95174717581f4e429723',
-      clientSecret: 'c785089881f8e9ba25ebde798cb94283cd80cb86',
+      clientID: 'e608fba0dff44a15ed1a',
+      clientSecret: '4a7021f0867c0fef3608463089918387b2001d51',
       distractionFreeMode: false
     },
     utterancesConfig: {
