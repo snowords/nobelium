@@ -4,7 +4,7 @@ export default async ({ body }, res) => {
   // 有空格提交不上去
   const mutation = `
     mutation NewNote {
-      createNote(data: { title: "${body.title.replace(/[\r\n]/g,"")}", content: "${body.content.replace(/[\r\n]/g,"")}" }) {
+      createNote(data: { title: "${body.title.replace(/[\r\n]/g, '')}", content: "${body.content.replace(/[\r\n]/g, '')}" }) {
         id
       }
     }
