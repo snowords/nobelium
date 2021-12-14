@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/snoword/nobelium/compare/v1.3.3...v1.4.0) (2021-12-14)
+
+
+### Features
+
+* 增加standard-version ([4367e4b](https://github.com/snoword/nobelium/commit/4367e4b9c0e75d7384e5e9af20e47b8c36a5271a))
+
+
+### Bug Fixes
+
+* 增加standard-version ([db4a3b8](https://github.com/snoword/nobelium/commit/db4a3b838d7333b9037d95b8f6591cf2cec55c3d))
+
 ### [1.3.3](https://github.com/snoword/nobelium/compare/v1.3.2...v1.3.3) (2021-12-14)
 
 ### [1.3.2](https://github.com/snoword/nobelium/compare/v1.3.0...v1.3.2) (2021-12-14)
