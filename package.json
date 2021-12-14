@@ -1,6 +1,6 @@
 {
   "name": "snoword_blog",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "homepage": "https://snoword.online",
   "license": "MIT",
   "repository": {
@@ -17,6 +17,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --no-cache",
+    "release": "standard-version",
     "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
@@ -59,6 +60,7 @@
     "eslint-plugin-react": "^7.25.1",
     "next-sitemap": "^1.6.164",
     "postcss": "^8.3.6",
+    "standard-version": "^9.3.2",
     "tailwindcss": "^2.2.9"
   },
   "resolutions": {
