@@ -17,7 +17,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --no-cache",
-    "release": "standard-version",
+    "release": "standard-version && git push --follow-tags origin main",
     "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
