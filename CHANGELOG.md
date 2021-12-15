@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/snoword/nobelium/compare/v1.4.0...v1.5.0) (2021-12-15)
+
+
+### Features
+
+* 增加全局状态管理 ([f643898](https://github.com/snoword/nobelium/commit/f643898a6e3641e025297189c785aa1e23b6592b))
+
 ## [1.4.0](https://github.com/snoword/nobelium/compare/v1.3.3...v1.4.0) (2021-12-14)
 
 
