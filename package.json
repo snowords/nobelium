@@ -21,6 +21,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.7.0",
     "antd": "^4.16.2",
     "axios": ">=0.21.1",
     "crypto-js": "^4.0.0",
@@ -42,6 +43,7 @@
     "react-markdown": "^6.0.2",
     "react-markdown-editor-lite": "^1.2.4",
     "react-notion-x": "^4.8.7",
+    "react-redux": "^7.2.6",
     "react-static-tweets": "^0.5.4",
     "static-tweets": "^0.5.5",
     "swr": "^1.0.1",
