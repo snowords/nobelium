@@ -95,7 +95,7 @@ export default function Article () {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 place-items-center items-start">
           {data.map((note, index) => {
             return (
-              <div className="overflow-ellipsis overflow-hidden rounded-lg border p-4 dark:text-white bg-white" key={index}>
+              <div className="text-ellipsis overflow-hidden rounded-lg border p-4 dark:text-white bg-white" key={index}>
                 <div className="text-lg mb-2">{note.title}</div>
                 <div>{note.content}</div>
                 <Button className="my-4" type="danger" shape="circle" icon={<DeleteOutlined />} onClick={() => onDelete(note.id)} />

@@ -31,7 +31,7 @@ const NavBar = () => {
   )
 
   return (
-    <div className="flex-shrink-0">
+    <div className="shrink-0">
       <ul className="md:flex flex-row hidden">
         {links.map(link => link.show && (
           <li

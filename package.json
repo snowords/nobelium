@@ -51,7 +51,7 @@
     "use-ackee": "^3.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.4",
+    "autoprefixer": "^10.4.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",
@@ -61,9 +61,9 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.25.1",
     "next-sitemap": "^1.6.164",
-    "postcss": "^8.3.6",
+    "postcss": "^8.4.5",
     "standard-version": "^9.3.2",
-    "tailwindcss": "^2.2.9"
+    "tailwindcss": "^3.0.7"
   },
   "resolutions": {
     "axios": ">=0.21.1"
