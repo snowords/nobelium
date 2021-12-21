@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/snoword/nobelium/compare/v1.5.0...v1.6.0) (2021-12-21)
+
+
+### Features
+
+* 升级Tailwindcss V3.0版本 ([8aca71f](https://github.com/snoword/nobelium/commit/8aca71f1509c839d0dc614daba6a59956caa790a))
+
 ## [1.5.0](https://github.com/snoword/nobelium/compare/v1.4.0...v1.5.0) (2021-12-15)
 
 
