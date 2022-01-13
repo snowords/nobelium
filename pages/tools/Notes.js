@@ -21,6 +21,7 @@ export default function Article () {
   if (error) return <h1>Something went wrong!</h1>
   if (!data) {
     return <div className="h-screen w-screen flex flex-col justify-center items-center">
+      // 王莽，土地私有制，
       <LoadingOutlined className="text-2xl" />
       Loading...
     </div>
