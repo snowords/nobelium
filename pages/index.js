@@ -34,10 +34,11 @@ const blog = ({ postsToShow, page, showNext, nowPage, colorStyle, addOnClass }) 
   return (
     <Container title={BLOG.title} description={BLOG.description} containerStyle={colorStyle} addOnClass={addOnClass}>
       <div className="smFull grid grid-cols-1 text-center text-2xl text-night dark:text-day">
-        <div className="self-center text-4xl">
+        <div className="self-center">
           {/* 如来说世界<br />皆非世界<br />是名世界 */}
           {/* 缘起性空 */}
-          知易行难，混乱即阶梯。
+          {/* 跨越知道和做到之间的鸿沟 */}
+          <span class="font-bold text-4xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">知易行难</span>
         </div>
         <div className="self-end pb-8 md:pb-28 flex justify-center gap-4">
           <Link href={BLOG.githubLink} rel="noopener">
