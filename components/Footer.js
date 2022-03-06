@@ -1,6 +1,6 @@
 import BLOG from '@/blog.config'
 // import Vercel from '@/components/Vercel'
-import Switcher from '@/lib/redux/switcher/Switcher' // 切换暗黑模式
+// import Switcher from '@/lib/redux/switcher/Switcher' // 切换暗黑模式
 
 const Footer = ({ fullWidth }) => {
   const d = new Date()
@@ -23,7 +23,7 @@ const Footer = ({ fullWidth }) => {
             {/* <a className="hover:text-blue-600" href="https://reactjs.org/" target="_blank" rel="noreferrer">React</a>,
             <a className="hover:text-blue-600" href="https://nextjs.org/" target="_blank" rel="noreferrer">Next</a> and <a className="hover:text-blue-600" href="https://tailwindcss.com/" target="_blank" rel="noreferrer">Tailwind CSS</a>. */}
           </p>
-          <Switcher />
+          {/* <Switcher /> */}
         </div>
       </div>
     </div>
