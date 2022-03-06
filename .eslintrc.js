@@ -26,6 +26,7 @@ module.exports = {
   rules: {
     'react/prop-types': 'off',
     'react/jsx-key': 'off',
+    'react/no-unknown-property': 'off',
     '@next/next/no-document-import-in-page': 'off',
     '@next/next/no-html-link-for-pages': 'off',
     'no-unused-vars': 'off'
