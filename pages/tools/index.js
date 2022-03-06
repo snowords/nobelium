@@ -53,7 +53,7 @@ class Tools extends React.Component {
               <Link href={tool.to} key={tool.id}>
                 <a>
                   <div className="p-4 rounded-lg shadow-sm flex items-center space-x-4 hover:shadow bg-white dark:bg-gray-700 dark:text-white">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <Image
                         alt={tool.name}
                         width={36}

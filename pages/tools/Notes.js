@@ -31,7 +31,6 @@ export default function Article () {
   }
 
   const onFinish = async (values) => {
-    console.log('values', values)
     if (!values.content) {
       message.error('内容不能为空！')
       return
@@ -75,7 +74,7 @@ export default function Article () {
         <Button className="my-4" type="primary" shape="circle" icon={<PlusOutlined />} onClick={onNewNote} />
         <div className={`${showForm ? 'block' : 'hidden'} `}>
           <Form
-            className="bg-white rounded-lg my-4 p-8 border"
+            className="bg-white rounded-lg my-4 p-8 border dark:bg-"
             name="basic"
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
@@ -96,7 +95,7 @@ export default function Article () {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 place-items-center items-start">
           {data.map((note, index) => {
             return (
-              <div className="overflow-ellipsis overflow-hidden rounded-lg border p-4 dark:text-white bg-white" key={note.id}>
+              <div className="text-ellipsis overflow-hidden rounded-lg border p-4 dark:text-white dark:bg-gray-800 bg-white" key={index}>
                 <div className="text-lg mb-2">{note.title}</div>
                 <div>{note.content}</div>
                 <Button className="my-4" type="danger" shape="circle" icon={<DeleteOutlined />} onClick={() => onDelete(note.id)} />

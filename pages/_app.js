@@ -9,6 +9,10 @@ import dynamic from 'next/dynamic'
 import { LocaleProvider } from '@/lib/locale'
 import Scripts from '@/components/Scripts'
 
+// 引入状态管理
+import { store } from '@/lib/redux/store'
+import { Provider } from 'react-redux'
+
 const Ackee = dynamic(() => import('@/components/Ackee'), { ssr: false })
 const Gtag = dynamic(() => import('@/components/Gtag'), { ssr: false })
 
@@ -17,7 +21,7 @@ function MyApp ({ Component, pageProps }) {
     <>
       <Scripts />
       <LocaleProvider>
-        <>
+        <Provider store={store}>
           {BLOG.isProd && BLOG?.analytics?.provider === 'ackee' && (
             <Ackee
               ackeeServerUrl={BLOG.analytics.ackeeConfig.dataAckeeServer}
@@ -26,7 +30,7 @@ function MyApp ({ Component, pageProps }) {
           )}
           {BLOG.isProd && BLOG?.analytics?.provider === 'ga' && <Gtag />}
           <Component {...pageProps} />
-        </>
+        </Provider>
       </LocaleProvider>
     </>
   )
