@@ -4,12 +4,7 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'plugin:@next/next/recommended',
-    'standard'
-  ],
-  parser: 'babel-eslint',
+  extends: ['plugin:react/recommended', 'next', 'standard'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
