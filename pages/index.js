@@ -37,8 +37,7 @@ const blog = ({ postsToShow, page, showNext, nowPage, colorStyle, addOnClass }) 
         <div className="self-center">
           {/* 如来说世界<br />皆非世界<br />是名世界 */}
           {/* 缘起性空 */}
-          {/* 跨越知道和做到之间的鸿沟 */}
-          <span className="font-bold text-5xl bg-clip-text text-transparent bg-gradient-to-tr from-pink-500 to-violet-500">知易行难</span>
+          <span className="p-2 font-bold text-5xl bg-clip-text text-transparent bg-gradient-to-tr from-pink-500 to-violet-500 leading-tight">知易行难</span>
         </div>
         <div className="self-end pb-8 md:pb-28 flex justify-center gap-4">
           <Link href={BLOG.githubLink} rel="noopener">
