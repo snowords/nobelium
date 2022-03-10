@@ -6,12 +6,13 @@ import Image from 'next/image'
 export async function getStaticProps () {
   const res = await getChangeLog()
   const resData = []
-  for (const b in res.block) {
-    const blockValue = res.block[b].value
+  for (const b in res) {
+    const blockValue = res[b].value
     if (blockValue.properties && blockValue.type === 'text') {
       const itemStr = blockValue.properties.title[0]
+      console.log('itemStr', itemStr)
       const itemList = itemStr[0].split(/日期：|提交ID：|链接：|作者：|邮箱：|头像：/)
-      resData.push({
+      itemList.length === 7 && resData.push({
         title: itemList[0].slice(2),
         date: itemList[1],
         commitId: itemList[2],

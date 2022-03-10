@@ -21,7 +21,11 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.7.0",
+    "antd": "^4.16.2",
     "axios": ">=0.21.1",
+    "crypto-js": "^4.0.0",
+    "file-loader": "^6.2.0",
     "feed": "^4.2.2",
     "gitalk": "^1.7.2",
     "graphql": "^16.0.1",
@@ -38,20 +42,32 @@
     "react-cusdis": "^2.0.1",
     "react-dom": "^17.0.2",
     "react-notion-x": "^4.11.0",
+    "react-markdown": "^6.0.2",
+    "react-markdown-editor-lite": "^1.2.4",
+    "react-redux": "^7.2.6",
+    "react-static-tweets": "^0.5.4",
+    "static-tweets": "^0.5.5",
+    "swr": "^1.0.1",
+    "url-loader": "^4.1.1",
     "use-ackee": "^3.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
-    "eslint": "<8.0.0",
-    "eslint-config-next": "^12.0.3",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^12.1.0",
     "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.1",
-    "eslint-plugin-react": "^7.26.1",
-    "next-sitemap": "^1.6.203",
-    "postcss": "^8.3.11",
-    "tailwindcss": "^2.2.19"
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.25.1",
+    "next-sitemap": "^1.6.164",
+    "postcss": "^8.4.5",
+    "standard-version": "^9.3.2",
+    "tailwindcss": "^3.0.7"
+  },
+  "resolutions": {
+    "axios": ">=0.21.1"
   },
   "bugs": {
     "url": "https://github.com/snowords/Resume/issues",
