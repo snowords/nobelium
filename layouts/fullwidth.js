@@ -57,7 +57,7 @@ const FullWidthLayout = ({ children, blockMap, frontMatter, emailHash }) => {
                   alt={BLOG.author}
                   width={24}
                   height={24}
-                  src='/img/avatar.jpg'
+                  src='/img/logo.jpg'
                   className="rounded-full"
                 />
                 <p className="ml-2 md:block">{BLOG.author}</p>
