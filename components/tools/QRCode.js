@@ -40,7 +40,7 @@ function QRCode () {
           />
       </div>
       <div className="justify-self-center">
-        <Button type="primary" shape="round" icon={<DownloadOutlined />} onClick={downloadPic}>
+        <Button shape="round" icon={<DownloadOutlined />} onClick={downloadPic}>
           Download
         </Button>
       </div>

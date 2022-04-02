@@ -4,16 +4,17 @@ import Image from 'next/image'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
 import { Menu, Dropdown } from 'antd'
-import { MenuOutlined } from '@ant-design/icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlassDollar, faToolbox, faRobot, faCloudArrowDown, faPersonDotsFromLine, faBars } from '@fortawesome/free-solid-svg-icons'
 
 const NavBar = () => {
   const locale = useLocale()
   const links = [
-    { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
-    { id: 1, name: locale.NAV.SEARCH, to: '/search', show: true },
-    { id: 2, name: locale.NAV.TOOLS, to: '/tools', show: true },
-    { id: 3, name: locale.NAV.RSS, to: '/changeLog', show: true },
-    { id: 4, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout }
+    { id: 0, name: locale.NAV.SEARCH, to: '/search', show: true, icon: faMagnifyingGlassDollar },
+    { id: 1, name: locale.NAV.TOOLS, to: '/tools', show: true, icon: faToolbox },
+    { id: 2, name: locale.NAV.RSS, to: '/changeLog', show: true, icon: faRobot },
+    { id: 3, name: locale.NAV.Cloud, to: 'https://onedrive-vercel-index-seven-xi.vercel.app/zh-CN/', show: true, icon: faCloudArrowDown },
+    { id: 4, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout, icon: faPersonDotsFromLine }
   ]
   const menu = (
     <Menu className="dark:bg-gray-600 shadow-lg">
@@ -39,7 +40,10 @@ const NavBar = () => {
             className="block ml-4 text-black dark:text-gray-50 nav"
           >
             <Link href={link.to}>
-              <a target="_blank">{link.name}</a>
+              <a target="_blank">
+                <FontAwesomeIcon icon={link.icon} />
+                {' ' + link.name}
+              </a>
             </Link>
           </li>
         )
@@ -48,7 +52,7 @@ const NavBar = () => {
       <div className="md:hidden -mt-1 pb-2 px-4 text-lg">
         <Dropdown overlay={menu} trigger={['click']}>
           <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-            <MenuOutlined className="text-night dark:text-day"/>
+            <FontAwesomeIcon className="text-night dark:text-day" icon={faBars} />
           </a>
         </Dropdown>
       </div>
@@ -97,6 +101,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
               width={24}
               height={24}
               src="/img/logo.png"
+              className="rounded-xl"
             />
           </a>
           <div className="pl-2 font-bold text-lg mb-1 text-night dark:text-day">Snoword’s Blog</div>
