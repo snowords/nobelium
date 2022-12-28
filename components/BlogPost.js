@@ -27,7 +27,7 @@ const BlogPost = ({ post }) => {
           </main>
         </div>
         <div className="self-center rounded-r-xl">
-          <Image src={post.image || '/img/blank.jpg'} alt={post.title} width='200%' height='100%' />
+          <Image src={post.image || '/img/blank.png'} alt={post.title} width='200%' height='100%' />
         </div>
       </div>
       {post.isTop

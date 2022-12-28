@@ -12,7 +12,7 @@ function CallMe () {
           alt="LogoPic"
           width={160}
           height={200}
-          src="/img/girl.gif"
+          src="/img/man.jpg"
         />
       </div>
       <div className="justify-self-center text-lg">我的手机号码：13061417969</div>
