@@ -2,7 +2,7 @@ const BLOG = {
   title: "Snoword's Blog",
   author: 'Snoword',
   email: '33chijian@gmail.com',
-  link: 'https://snoword.online',
+  link: 'https://www.kehangbio.com/',
   description: '如来说世界，皆非世界，是名世界。',
   lang: 'zh-CN',
   appearance: 'auto', // ['light', 'dark', 'auto'],

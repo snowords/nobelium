@@ -13,8 +13,7 @@ const NavBar = () => {
     { id: 0, name: locale.NAV.SEARCH, to: '/search', show: true, icon: faMagnifyingGlassDollar },
     { id: 1, name: locale.NAV.TOOLS, to: '/tools', show: true, icon: faToolbox },
     { id: 2, name: locale.NAV.RSS, to: '/changeLog', show: true, icon: faRobot },
-    { id: 3, name: locale.NAV.Cloud, to: 'https://onedrive-vercel-index-seven-xi.vercel.app/zh-CN/', show: true, icon: faCloudArrowDown },
-    { id: 4, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout, icon: faPersonDotsFromLine }
+    { id: 3, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout, icon: faPersonDotsFromLine }
   ]
   const menu = (
     <Menu className="dark:bg-gray-600 shadow-lg">
